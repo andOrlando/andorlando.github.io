@@ -7,7 +7,7 @@ import assert from "assert"
 //consts
 const BLOG_PATH="../blog/blogs/"
 const BLOG_OUT="../static/blogs/"
-const TABLE_OF_CONTENTS_OUT="../static/table_of_contents.html"
+const TABLE_OF_CONTENTS_OUT="../static/"
 
 //set up marked
 const options = markedHighlight({
@@ -22,6 +22,11 @@ options.mangle = false;
 options.headerIds = false;
 
 marked.use(options);
+
+//make directories
+[BLOG_OUT, TABLE_OF_CONTENTS_OUT].forEach(out => {
+  fs.mkdirSync(out, { recursive: true})
+})
 
 //get all blogs
 const blogs = fs.readdirSync(BLOG_PATH, "utf8")
@@ -96,5 +101,5 @@ for (const category of categories) {
 res = `<div id="tableofcontents" style="max-width:600px;margin:auto;position:inherit">\n${res}</div>\n`
 res = `<link rel="stylesheet" type="text/css" href="../blog/styles.css">\n` + res
 
-fs.writeFileSync(TABLE_OF_CONTENTS_OUT, res) 
+fs.writeFileSync(TABLE_OF_CONTENTS_OUT+"table_of_contents.html", res) 
 console.log("Finished writing table of contents")
