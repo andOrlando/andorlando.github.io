@@ -2,12 +2,14 @@
   font-family: Verdana,sans-serif;
   color: #ffffff;
   
-  --light: #ffffff;
-  --dark: #ffffff;
-  --darker: #ffffff;
+  --light: #d9d9d9;
+  --dark: #6e6e6e;
+  /* these two aren't actully used for anything :p */
+  --darker: #262626;
   --accent: #ffffff;
 }
 body {
+  background: var(--darker);
   margin: 0;
 }
 #root {
@@ -27,6 +29,7 @@ body {
   min-width: 0px;
 }
 #canvas {
+  background: #262626;
   min-width: var(--width);
   height: 100vh;
   position: absolute;
@@ -38,10 +41,11 @@ body {
   cursor: pointer;
   width: 36px;
   height: 36px;
-  position: absolute;
+  position: fixed;
   z-index: 2;
   bottom: 10px;
   left: 10px;
+  user-select: none;
 }
 #tableofcontents {
   min-width: calc(var(--width) - 20px);
@@ -64,6 +68,8 @@ body {
   left: 0;
 }
 #tableofcontents a {
+  color: #ffffff;
+  text-decoration: none;
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
@@ -73,6 +79,7 @@ body {
   z-index: 0;
   margin: 0 0 4px 16px;
   padding: 0 4px;
+  user-select: none;
 }
 #tableofcontents a::after {
   background-color: var(--dark);
@@ -97,12 +104,15 @@ body {
 }
 
 #blogcanvas {
+  background: #212121;
   width: 100%;
   min-height: 100vh;
 }
 #blog {
-  width: 800px;
+  max-width: 760px;
+  padding: 0px 20px;
   margin: auto;
+  margin-bottom: 300px;
 }
 
 #blog h1,
@@ -138,7 +148,7 @@ body {
 }
 #blog a {
   font-weight: bold;
-  color: var(--dark);
+  color: var(--light);
 }
 #blog img {
   
@@ -146,6 +156,7 @@ body {
 #blog pre {
   background: var(--darker);
   border-radius: 8px;
+  overflow: auto;
   margin: 0;
   padding: 12px;
 }

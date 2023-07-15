@@ -1,0 +1,202 @@
+<head><title>Overengineered Notion Stuff</title></head>
+<link rel="stylesheet" type="text/css" href="../../blog/styles.css">
+<link rel="stylesheet" type="text/css" href="../../blog/atom-one-dark-reasonable.css">
+<body><div id="blog">
+<h1 class="bigtitle">Overengineered Notion Stuff</h1>
+<div class="metadata"><strong>name</strong>: notion.md</div>
+<div class="metadata"><strong>category</strong>: stupid stuff</div>
+<div class="metadata"><strong>date</strong>: 13/7/2023</div>
+<p>So it&#39;s not even the first week of College and I get covid. I go home, isolate
+myself on the third floor, have my entire family wait on me and do absolutely
+nothing but stare at one of a couple screens and feel miserable for the next
+two weeks. During that time of stairing at screens and feeling miserable, however,
+I got into notion.</p>
+<p>I always was pretty bad with organization but with notion I would just put all
+my assignments in for an entire semester and work on them one day/week/month
+at a time, and notion was a pretty good tool for doing that. There were a couple
+issues, however, and they led me to creating some pretty wack formulas</p>
+<p>Feel free to steal any of these formulas btw, though I feel like only the time
+formula is actually that useful.</p>
+<h2>formulas are cool</h2>
+<p>Notion is all about tables. Everything is in a table. In these tables you can
+have formulas. Formulas are basically jaavascript but only expressions and the
+only variables you can access is stuff in the same row as you. Aside from that
+they&#39;re pretty versitile and you are in fact allowed regular expresssions which
+means you can put together some really hacky stuff if need be (which I do lol).</p>
+<h3>time formula</h3>
+<p>So the first issue I had with notion is I wanted to see everything that was due
+this week. Notion at the time, however, didn&#39;t allow me to filter by &quot;dates between
+this monday and this sunday,&quot; it just let me see the next 7 days. Problem is, I would
+finish a bunch of stuff one day and have it immediately replaced the next, making it
+feel like neverending and terrible and it was actually an issue. So of course I made
+a massive formula.</p>
+<p>The idea is I&#39;m going to have a single field with a bunch of indicators--different 
+characters will mean its within different timespans:</p>
+<ul>
+<li>🟦: today</li>
+<li>🟪: tomorrow</li>
+<li>🔵: this week</li>
+<li>🟣: next week</li>
+<li>🔷: this month</li>
+</ul>
+<p>The formula is as follows</p>
+<pre><code class="language-typescript"><span class="hljs-comment">//today start &lt; end date &lt; today end</span>
+(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">now</span>(), -<span class="hljs-title function_">hour</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;hours&quot;</span>), -<span class="hljs-title function_">minute</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;minutes&quot;</span>) &lt;= <span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;End Date Gen&quot;</span>) and 
+<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">now</span>(), <span class="hljs-number">23</span>-<span class="hljs-title function_">hour</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;hours&quot;</span>), <span class="hljs-number">59</span>-<span class="hljs-title function_">minute</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;minutes&quot;</span>) &gt;= <span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;End Date Gen&quot;</span>)
+? <span class="hljs-string">&quot;🟦&quot;</span> : <span class="hljs-string">&quot;&quot;</span>) +
+
+<span class="hljs-comment">//tomorrow start &lt; end date &lt; tomorrow end</span>
+(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">now</span>(), -<span class="hljs-title function_">hour</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;hours&quot;</span>), -<span class="hljs-title function_">minute</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;minutes&quot;</span>), <span class="hljs-number">1</span>, <span class="hljs-string">&quot;days&quot;</span>) &lt;= <span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;End Date Gen&quot;</span>) and
+<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">now</span>(), <span class="hljs-number">23</span>-<span class="hljs-title function_">hour</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;hours&quot;</span>), <span class="hljs-number">59</span>-<span class="hljs-title function_">minute</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;minutes&quot;</span>), <span class="hljs-number">1</span>, <span class="hljs-string">&quot;days&quot;</span>) &gt;= <span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;End Date Gen&quot;</span>)
+? <span class="hljs-string">&quot;🟪&quot;</span> : <span class="hljs-string">&quot;&quot;</span>) +
+
+<span class="hljs-comment">//monday start &lt; end date &lt; sunday end</span>
+(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">now</span>(),
+    -<span class="hljs-title function_">hour</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;hours&quot;</span>),
+    -<span class="hljs-title function_">minute</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;minutes&quot;</span>),
+    <span class="hljs-number">1</span>-(<span class="hljs-title function_">day</span>(<span class="hljs-title function_">now</span>()) == <span class="hljs-number">0</span> ? <span class="hljs-number">7</span> : <span class="hljs-title function_">day</span>(<span class="hljs-title function_">now</span>())), <span class="hljs-string">&quot;days&quot;</span>) &lt;= <span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;End Date Gen&quot;</span>) and
+<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">now</span>(),
+    -<span class="hljs-title function_">hour</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;hours&quot;</span>),
+    -<span class="hljs-title function_">minute</span>(<span class="hljs-title function_">now</span>())-<span class="hljs-number">1</span>, <span class="hljs-string">&quot;minutes&quot;</span>),
+    <span class="hljs-number">8</span>-(<span class="hljs-title function_">day</span>(<span class="hljs-title function_">now</span>()) == <span class="hljs-number">0</span> ? <span class="hljs-number">7</span> : <span class="hljs-title function_">day</span>(<span class="hljs-title function_">now</span>())), <span class="hljs-string">&quot;days&quot;</span>) &gt;= <span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;End Date Gen&quot;</span>)
+? <span class="hljs-string">&quot;🔵&quot;</span> : <span class="hljs-string">&quot;&quot;</span>) +
+
+<span class="hljs-comment">// next Monday start &lt; end rage &lt; next sunday end</span>
+(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">now</span>(),
+    -<span class="hljs-title function_">hour</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;hours&quot;</span>),
+    -<span class="hljs-title function_">minute</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;minutes&quot;</span>),
+    <span class="hljs-number">1</span>-(<span class="hljs-title function_">day</span>(<span class="hljs-title function_">now</span>()) == <span class="hljs-number">0</span> ? <span class="hljs-number">7</span> : <span class="hljs-title function_">day</span>(<span class="hljs-title function_">now</span>())), <span class="hljs-string">&quot;days&quot;</span>),
+  <span class="hljs-number">1</span>, <span class="hljs-string">&quot;weeks&quot;</span>) &lt;= <span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;End Date Gen&quot;</span>) and
+<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">now</span>(),
+    -<span class="hljs-title function_">hour</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;hours&quot;</span>),
+    -<span class="hljs-title function_">minute</span>(<span class="hljs-title function_">now</span>())-<span class="hljs-number">1</span>, <span class="hljs-string">&quot;minutes&quot;</span>),
+    <span class="hljs-number">8</span>-(<span class="hljs-title function_">day</span>(<span class="hljs-title function_">now</span>()) == <span class="hljs-number">0</span> ? <span class="hljs-number">7</span> : <span class="hljs-title function_">day</span>(<span class="hljs-title function_">now</span>())), <span class="hljs-string">&quot;days&quot;</span>),
+  <span class="hljs-number">1</span>, <span class="hljs-string">&quot;weeks&quot;</span>) &gt;= <span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;End Date Gen&quot;</span>)
+? <span class="hljs-string">&quot;🟣&quot;</span> : <span class="hljs-string">&quot;&quot;</span>) +
+
+<span class="hljs-comment">//1 start &lt; end date &lt; 31 (or whatever) end</span>
+(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">now</span>(),
+    -<span class="hljs-title function_">hour</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;hours&quot;</span>),
+    -<span class="hljs-title function_">minute</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;minutes&quot;</span>),
+    <span class="hljs-number">1</span>-<span class="hljs-title function_">date</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;days&quot;</span>) &lt;= <span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;End Date Gen&quot;</span>) and
+<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">dateAdd</span>(<span class="hljs-title function_">now</span>(),
+    -<span class="hljs-title function_">hour</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;hours&quot;</span>),
+    -<span class="hljs-title function_">minute</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;minutes&quot;</span>),
+    <span class="hljs-number">1</span>-<span class="hljs-title function_">date</span>(<span class="hljs-title function_">now</span>()), <span class="hljs-string">&quot;days&quot;</span>),
+    <span class="hljs-number">1</span>, <span class="hljs-string">&quot;months&quot;</span>),
+    -<span class="hljs-number">1</span>, <span class="hljs-string">&quot;minutes&quot;</span>) &gt;= <span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;End Date Gen&quot;</span>)
+? <span class="hljs-string">&quot;🔷&quot;</span> : <span class="hljs-string">&quot;&quot;</span>)
+</code></pre><p>Yeah I told you it&#39;s crazy. This is still significantly less complicated than the next one,
+however. Anyways I then just filter by when the formula contains the correct character and
+it tells me what I want it to tell me.</p>
+<p>It the property &quot;End Date Gen&quot; which is basically the end date but with default values if
+the user doesn&#39;t input one. It takes in &quot;End Date&quot; and if it doesn&#39;t exist it just does like
+Jan 1st 3000 or something. Formula for that is:</p>
+<pre><code class="language-typescript"><span class="hljs-title function_">empty</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;End Date&quot;</span>)) ? <span class="hljs-title function_">fromTimestamp</span>(<span class="hljs-number">3.250378434e+13</span>) : <span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;End Date&quot;</span>)
+</code></pre><p>Anyways this is basically what kept me using notion for so long. I kinda dropped off second
+semester because of reasons I&#39;ll elaborate on in the conclusion, but if I slightly modified
+this formula or used better search queries it likely would have been super useful. Anyways,
+if that formula is the core of my notion experience, this next formula is absolutely useless</p>
+<h3>schedule</h3>
+<p>This thing is a monster. I was complaining with a friend about how notion is <em>almost</em> perfect,
+but I would like to be able to use it as a calendar, not just a fancy todo list. I had already
+made the timeformula and a couple others (which are also notable and very long but boring
+so I&#39;m not writing about them) and we were contemplating whether something like a calendar app
+was possible to emulate in notion. My thoughts on its viability were something like &quot;nah, oh wait,
+nvm, oh actually no, wait yes, actually no, wait maybe&quot; until I settled on a &quot;probably.&quot;</p>
+<p>The reason I deliberated so much was becuase there were a good number of barriers preventing this
+from being possible, and the only way I overcame them was with some pretty insane regex hackiness.</p>
+<p>First, how do I link two tables together? I need one table to display the schedule (the calendar)
+and another to actually have the events, because there&#39;s no way I&#39;m hardcoding events that&#39;s a copout.
+The solution to this is to have a single column in events that hosts all the data and roll up every 
+event to every row in the calendar view. By doing that, we would basically get a comma-separated string
+of all of the events. It looks something like this:</p>
+<pre><code>HIS 112 mon 10:10-11:00 10/01/22-12/12/22, HIS 112 wed 10:10-11:00 10/01/22-12/12/22, HIS 112 fri 10:10-11:00 10/01/22-12/12/22, Math 233 mon 12:20-13:10 00/00/00-12/12/22, Math 233 wed 12:20-13:10 00/00/00-12/12/22, Math 233 fri 12:20-13:10 00/00/00-12/12/22, FYS 191 mon 13:25-14:15 00/00/00-12/12/22, BUILD UMass wed 17:30-18:30 00/00/00-12/21/22, CS187 Lab thu 17:30-18:20 00/00/00-12/12/22
+</code></pre><p>So we&#39;ve got the data from the tables, but now how do we filter it to specific time slots? Basically,
+each row of the table will be a different time, like in a normal calendar, and each column will be a 
+different day. So basically, given a time a day of the week, I need to determine if an event will be
+within that time slot.</p>
+<p>How do I do this? lots, and I mean lots, of regex. I don&#39;t think you understand exactly how much
+regex--it&#39;s <strong>lots</strong>.</p>
+<p>Day of week is pretty easy, we replace all entries with days other than monday with &quot;&quot;.</p>
+<p>Then we get to time. This is where it gets really difficult--First, we have to effectively
+do integer comparison in regex. How do you do do that? Well you have to use dynamic regular
+expressions. We basically prune all the times outside our winodw. We do this by using the fact
+that <code>[0-5]</code> will match all numbers from 0 to 5. So if we do <code>[0-n]</code>, we can effectively match all
+numbers less than <code>n</code>. Basically I do that 8 times, one for each digit of start time, and one for 
+each digit of end time</p>
+<p>Finally we do date which is much of the same. We prune any events where the current date is before
+the event is supposed to start or after its supposed to end. After that we should only have one event
+left, assuming we&#39;re not double-booked (which I didn&#39;t actually account for in the code).</p>
+<p>So what does this monstrosity look like? Please, feast your eyes on the monday code.</p>
+<pre><code class="language-typescript"><span class="hljs-comment">//full boyo</span>
+<span class="hljs-title function_">replaceAll</span>(
+<span class="hljs-title function_">replaceAll</span>(
+<span class="hljs-title function_">replaceAll</span>(
+<span class="hljs-title function_">replaceAll</span>(
+<span class="hljs-title function_">replaceAll</span>(
+<span class="hljs-title function_">replaceAll</span>(<span class="hljs-string">&quot;, &quot;</span> + <span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;Events&quot;</span>),
+
+<span class="hljs-comment">/* non-monday-stuff */</span>
+<span class="hljs-string">&quot;, [^,]*(?: (?:tue|wed|thu|fri|sat|sun) )[^,]*&quot;</span>, <span class="hljs-string">&quot;&quot;</span>),
+
+<span class="hljs-comment">/* if first one matches everything less than time, remove */</span>
+<span class="hljs-string">&quot;, [^,]*(?:&quot;</span> +
+<span class="hljs-string">&quot;[&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;a&quot;</span>)+<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;-9]\\d:\\d\\d&quot;</span> +
+(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;b&quot;</span>)&lt;<span class="hljs-number">9</span> ? <span class="hljs-string">&quot;|&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;a&quot;</span>))+<span class="hljs-string">&quot;[&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;b&quot;</span>)+<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;-9]:\\d\\d&quot;</span> : <span class="hljs-string">&quot;&quot;</span>) +
+<span class="hljs-string">&quot;|&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;a&quot;</span>))+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;b&quot;</span>))+<span class="hljs-string">&quot;:[&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;c&quot;</span>)+<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;-9]\\d&quot;</span> +
+(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;d&quot;</span>)&lt;<span class="hljs-number">9</span> ? <span class="hljs-string">&quot;|&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;a&quot;</span>))+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;b&quot;</span>))+<span class="hljs-string">&quot;:&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;c&quot;</span>))+<span class="hljs-string">&quot;[&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;d&quot;</span>)+<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;-9]&quot;</span> : <span class="hljs-string">&quot;&quot;</span>)
++ <span class="hljs-string">&quot;)-\\d\\d:\\d\\d[^,]*&quot;</span>, <span class="hljs-string">&quot;&quot;</span>),
+
+<span class="hljs-comment">/* if second one matches everything less than time, remove */</span>
+<span class="hljs-string">&quot;, [^,]*\\d\\d:\\d\\d-(?:&quot;</span> +
+<span class="hljs-title function_">slice</span>(
+(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;a&quot;</span>)&gt;<span class="hljs-number">0</span> ? <span class="hljs-string">&quot;|[0-&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;a&quot;</span>)-<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;]\\d:\\d\\d&quot;</span> : <span class="hljs-string">&quot;&quot;</span>)+
+(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;b&quot;</span>)&gt;<span class="hljs-number">0</span> ? <span class="hljs-string">&quot;|&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;a&quot;</span>))+<span class="hljs-string">&quot;[0-&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;b&quot;</span>)-<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;]:\\d\\d&quot;</span> : <span class="hljs-string">&quot;&quot;</span>)+
+(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;c&quot;</span>)&gt;<span class="hljs-number">0</span> ? <span class="hljs-string">&quot;|&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;a&quot;</span>))+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;b&quot;</span>))+<span class="hljs-string">&quot;:[0-&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;c&quot;</span>)-<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;]\\d&quot;</span> : <span class="hljs-string">&quot;&quot;</span>)+
+(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;d&quot;</span>)&gt;<span class="hljs-number">0</span> ? <span class="hljs-string">&quot;|&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;a&quot;</span>))+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;b&quot;</span>))+<span class="hljs-string">&quot;:&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;c&quot;</span>))+<span class="hljs-string">&quot;[0-&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;d&quot;</span>)-<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;]&quot;</span> : <span class="hljs-string">&quot;&quot;</span>)
+,<span class="hljs-number">1</span>) + <span class="hljs-string">&quot;)[^,]*&quot;</span>, <span class="hljs-string">&quot;&quot;</span>),
+
+<span class="hljs-comment">/* match all first ones greater than day*/</span>
+<span class="hljs-string">&quot;, [^,]*(?:&quot;</span> +
+<span class="hljs-title function_">slice</span>(
+(<span class="hljs-title function_">year</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))%<span class="hljs-number">100</span>/<span class="hljs-number">10</span>&lt;<span class="hljs-number">9</span> ? <span class="hljs-string">&quot;|\\d\\d\\/\\d\\d\\/[&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">floor</span>(<span class="hljs-title function_">year</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))%<span class="hljs-number">100</span>/<span class="hljs-number">10</span>)+<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;-9]\\d&quot;</span> : <span class="hljs-string">&quot;&quot;</span>) +
+(<span class="hljs-title function_">year</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))%<span class="hljs-number">10</span>&lt;<span class="hljs-number">9</span> ? <span class="hljs-string">&quot;|\\d\\d\\/\\d\\d\\/&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">floor</span>(<span class="hljs-title function_">year</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))%<span class="hljs-number">100</span>/<span class="hljs-number">10</span>))+<span class="hljs-string">&quot;[&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">year</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))%<span class="hljs-number">10</span>+<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;-9]&quot;</span> : <span class="hljs-string">&quot;&quot;</span>) +
+((<span class="hljs-title function_">month</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))+<span class="hljs-number">1</span>)/<span class="hljs-number">10</span>&lt;<span class="hljs-number">9</span> ? <span class="hljs-string">&quot;|[&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">floor</span>(<span class="hljs-title function_">month</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))/<span class="hljs-number">10</span>+<span class="hljs-number">2</span>))+<span class="hljs-string">&quot;-9]\\d\\/\\d\\d\\/&quot;</span>+<span class="hljs-title function_">formatDate</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>),<span class="hljs-string">&quot;YY&quot;</span>) : <span class="hljs-string">&quot;&quot;</span>) +
+((<span class="hljs-title function_">month</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))+<span class="hljs-number">1</span>)%<span class="hljs-number">10</span>&lt;<span class="hljs-number">9</span> ? <span class="hljs-string">&quot;|&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">floor</span>(<span class="hljs-title function_">month</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))/<span class="hljs-number">10</span>+<span class="hljs-number">1</span>))+<span class="hljs-string">&quot;[&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">month</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))%<span class="hljs-number">10</span>+<span class="hljs-number">2</span>)+<span class="hljs-string">&quot;-9]\\/\\d\\d\\/&quot;</span>+<span class="hljs-title function_">formatDate</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>), <span class="hljs-string">&quot;YY&quot;</span>) : <span class="hljs-string">&quot;&quot;</span>) +
+(<span class="hljs-title function_">date</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))/<span class="hljs-number">10</span>&lt;<span class="hljs-number">9</span> ? <span class="hljs-string">&quot;|&quot;</span>+<span class="hljs-title function_">formatDate</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>),<span class="hljs-string">&quot;MM&quot;</span>)+<span class="hljs-string">&quot;\\/[&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">floor</span>(<span class="hljs-title function_">date</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))/<span class="hljs-number">10</span>)+<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;-9]\\d\\/&quot;</span>+<span class="hljs-title function_">formatDate</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>),<span class="hljs-string">&quot;YY&quot;</span>) : <span class="hljs-string">&quot;&quot;</span>) +
+(<span class="hljs-title function_">date</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))%<span class="hljs-number">10</span>&lt;<span class="hljs-number">9</span> ? <span class="hljs-string">&quot;|&quot;</span>+<span class="hljs-title function_">formatDate</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>),<span class="hljs-string">&quot;MM&quot;</span>)+<span class="hljs-string">&quot;\\/&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">floor</span>(<span class="hljs-title function_">date</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))/<span class="hljs-number">10</span>))+<span class="hljs-string">&quot;[&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">date</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))%<span class="hljs-number">10</span>+<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;-9]\\/&quot;</span>+<span class="hljs-title function_">formatDate</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>),<span class="hljs-string">&quot;YY&quot;</span>) : <span class="hljs-string">&quot;&quot;</span>)
+,<span class="hljs-number">1</span>) + <span class="hljs-string">&quot;)-\\d\\d\\/\\d\\d\\/\\d\\d&quot;</span>, <span class="hljs-string">&quot;&quot;</span>),
+
+<span class="hljs-comment">/* match all second ones less than day */</span>
+<span class="hljs-string">&quot;, [^,]*\\d\\d\\/\\d\\d\\/\\d\\d-(?:&quot;</span> +
+<span class="hljs-title function_">slice</span>(
+(<span class="hljs-title function_">year</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))/<span class="hljs-number">10</span>&gt;=<span class="hljs-number">1</span> ? <span class="hljs-string">&quot;|\\d\\d\\/\\d\\d\\/[0-&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">floor</span>(<span class="hljs-title function_">year</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))%<span class="hljs-number">100</span>/<span class="hljs-number">10</span>)-<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;]\\d&quot;</span> : <span class="hljs-string">&quot;&quot;</span>) +
+(<span class="hljs-title function_">year</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))%<span class="hljs-number">10</span>&gt;=<span class="hljs-number">1</span> ? <span class="hljs-string">&quot;|\\d\\d\\/\\d\\d\\/&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">floor</span>(<span class="hljs-title function_">year</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))%<span class="hljs-number">100</span>/<span class="hljs-number">10</span>))+<span class="hljs-string">&quot;[0-&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">year</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))%<span class="hljs-number">10</span>-<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;]&quot;</span> : <span class="hljs-string">&quot;&quot;</span>) +
+((<span class="hljs-title function_">month</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))+<span class="hljs-number">1</span>)/<span class="hljs-number">10</span>&gt;=<span class="hljs-number">1</span> ? <span class="hljs-string">&quot;|[0-&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">floor</span>((<span class="hljs-title function_">month</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))+<span class="hljs-number">1</span>)/<span class="hljs-number">10</span>-<span class="hljs-number">1</span>))+<span class="hljs-string">&quot;]\\d\\/\\d\\d\\/&quot;</span>+<span class="hljs-title function_">formatDate</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>),<span class="hljs-string">&quot;YY&quot;</span>) : <span class="hljs-string">&quot;&quot;</span>) +
+((<span class="hljs-title function_">month</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))+<span class="hljs-number">1</span>)%<span class="hljs-number">10</span>&gt;=<span class="hljs-number">1</span> ? <span class="hljs-string">&quot;|&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">floor</span>((<span class="hljs-title function_">month</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))+<span class="hljs-number">1</span>)/<span class="hljs-number">10</span>))+<span class="hljs-string">&quot;[0-&quot;</span>+<span class="hljs-title function_">format</span>((<span class="hljs-title function_">month</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))+<span class="hljs-number">1</span>)%<span class="hljs-number">10</span>-<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;]\\/\\d\\d\\/&quot;</span>+<span class="hljs-title function_">formatDate</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>),<span class="hljs-string">&quot;YY&quot;</span>) : <span class="hljs-string">&quot;&quot;</span>) +
+(<span class="hljs-title function_">date</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))/<span class="hljs-number">10</span>&gt;=<span class="hljs-number">1</span> ? <span class="hljs-string">&quot;|&quot;</span>+<span class="hljs-title function_">formatDate</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>),<span class="hljs-string">&quot;MM&quot;</span>)+<span class="hljs-string">&quot;\\/[0-&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">floor</span>(<span class="hljs-title function_">date</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))/<span class="hljs-number">10</span>)-<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;]\\d\\/&quot;</span>+<span class="hljs-title function_">formatDate</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>),<span class="hljs-string">&quot;YY&quot;</span>) : <span class="hljs-string">&quot;&quot;</span>) +
+(<span class="hljs-title function_">date</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))%<span class="hljs-number">10</span>&gt;=<span class="hljs-number">1</span> ? <span class="hljs-string">&quot;|&quot;</span>+<span class="hljs-title function_">formatDate</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>),<span class="hljs-string">&quot;MM&quot;</span>)+<span class="hljs-string">&quot;\\/&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">floor</span>(<span class="hljs-title function_">date</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))/<span class="hljs-number">10</span>))+<span class="hljs-string">&quot;[0-&quot;</span>+<span class="hljs-title function_">format</span>(<span class="hljs-title function_">date</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>))%<span class="hljs-number">10</span>-<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;]\\/&quot;</span>+<span class="hljs-title function_">formatDate</span>(<span class="hljs-title function_">prop</span>(<span class="hljs-string">&quot;m&quot;</span>),<span class="hljs-string">&quot;YY&quot;</span>) : <span class="hljs-string">&quot;&quot;</span>)
+,<span class="hljs-number">1</span>) + <span class="hljs-string">&quot;)&quot;</span>, <span class="hljs-string">&quot;&quot;</span>),
+
+<span class="hljs-string">&quot;(?:mon|tue|wed|thu|fri|sat|sun).*&quot;</span>, <span class="hljs-string">&quot;&quot;</span>)
+</code></pre><p>So I never actually used this. It&#39;s great to talk about and it was really fun to make, but 
+it&#39;s like really really slow. It has to run a lot of regex on a lot of things and I don&#39;t
+think notion was really optimized for this. Notion wasn&#39;t really made for this kind of thing
+in the first place</p>
+<h2>Conclusion</h2>
+<p>So I didn&#39;t really use notion my second semster of college because with all my formulas it was
+starting to get slow and unorganized--it was almost like a messy bedroom. Additionally, basically
+all my work was assigned at a much slower pace. Most of my assignemtns were on a biweekly basis
+and since my time thing only would show stuff one week at a time, it resulted in me missing stuff,
+and becasue of that I started to wean off notion. I was overly reliant the first semester, so when
+the second semester came and it wasn&#39;t up to snuff, I kinda suffered for it.</p>
+<p>That&#39;s not to say it&#39;s not redemable, however! I might pick it back up next semester and just add
+a biweekly view if I have biweekly stuff. It&#39;s relatively easy to do and likely doesn&#39;t even require
+rewriting anything. That being said, notion is still an electron app and is definitely a little
+slow and bloated for my taste.</p>
+<p>I&#39;m vaugely considering writing my own cute little cli/tui todo list (maybe rust?) or switching
+to Obsidian.md, but my adventures in notion have been pretty fun regardless, and if nothing else
+I really enjoyed writing those formulas.</p>
+</div></body>
+<script>localStorage.preserveBlog="notion";window.location.href="../../blog/index.html"</script>

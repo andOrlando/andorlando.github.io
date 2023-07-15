@@ -1,3 +1,6 @@
+Bennett's Thoughts
+date: 13/7;
+
 ## he doesn't actually have any
 This is a developer blog. Every self-respecting developer has one of these
 (unless you're a recruiter who doesn't, in which case only **most** 

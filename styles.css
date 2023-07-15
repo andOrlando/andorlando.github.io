@@ -1,8 +1,8 @@
 :root {
   font-family: Verdana,sans-serif;
   
-  --light: #ffffff;
-  --dark: #ffffff;
+  --light: #cacaca;
+  --dark: #7c7c7c;
 }
 body {
   margin: 0;
@@ -16,12 +16,6 @@ body {
 }
 #canvas {
   position: relative;
-}
-#disclaimer {
-  font-size: 20px;
-  position: absolute;
-  bottom: 4px;
-  left: 4px;
 }
 
 .link + .link {
