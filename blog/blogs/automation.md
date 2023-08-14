@@ -22,7 +22,7 @@ I never did zybooks ever again. That was the first one.
 ## General overview
 Basically I didn't wanna make a chrome extension but I had to host the
 data somewhere, so I used github. Basically, it queries the raw github
-and evaulates it using a fetch thing, e.g.
+and evaluates it using a fetch thing, e.g.
 ```js
 fetch("https://raw.githubusercontent.com/andOrlando/homework-scripts/main/khc.js").then(a=>a.text()).then(eval)
 ```
@@ -63,9 +63,9 @@ for a more involved console I made
 ### Perusall
 Perusall worked on a point system--if you do stuff you get points. One
 time me and another dude in the class noticed that our points would sometimes
-randomly jump wihtout us making comments or responding to stuff, and we were
+randomly jump without us making comments or responding to stuff, and we were
 like "I wonder how high we can get our score by not doing anything?" So
-obviously I automated the process of doing basically everything taht didn't
+obviously I automated the process of doing basically everything that didn't
 require any intelligence. Basically it would scroll through the doc as well as
 enter and exit it a bunch of times. I think the max I got up to by doing nothing
 was like 2.5/4 or something lol
@@ -82,7 +82,7 @@ actually automate the homework, but for now it's just kinda cool
 ### Kendal Hunt Content
 I started by doing these normally and was doing great until like the 3rd one
 which I really couldn't be bothered to study for. I think I said out loud to
-the people I was studying with, "If I don't do well on this I'm autoamting
+the people I was studying with, "If I don't do well on this I'm automating 
 it." Since I've since automated it, you can guess how well I did on the quiz.
 
 The way it works is that all the quiz questions come from a bank of practice
@@ -91,7 +91,7 @@ number of times. So if I just save the practice quiz and answer pairs in a
 json string in local storage I've then got a way to automate the quizzes.
 
 ## Ethicality
-So, uhhh, I should probably adress whether this is ethical or not. I
+So, uhhh, I should probably address whether this is ethical or not. I
 obviously wouldn't be doing it if I didn't think it is. What I'm doing
 is basically just slightly more specific versions of things we're already
 allowed to do.
@@ -119,7 +119,7 @@ Kendall Hunt Content I can kinda understand it looking a little shady,
 but we are actually allowed to take notes on the questions and use our
 notes on the quiz. I'm just hastening that process. I'm sure there's
 something about "cheating myself out of practice" or something but I
-got an A in the class wihtout it so I guess I was fine.
+got an A in the class without it so I guess I was fine.
 
 That being said if you're a school administrator and you end up banning
 these I mean that's perfectly understandable, you don't want stuff to

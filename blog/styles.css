@@ -151,7 +151,7 @@ body {
   color: var(--light);
 }
 #blog img {
-  
+  width: 100%;
 }
 #blog pre {
   background: var(--darker);

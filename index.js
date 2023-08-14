@@ -20,9 +20,9 @@ const blog = document.getElementById("blog")
 const demos = document.getElementById("demos")
 const resume = document.getElementById("resume")
 
-make_navigate(about)
-make_navigate(blog, a=>"./blog/index.html")
-make_navigate(demos)
+// make_navigate(about)
+make_navigate(blog, a=>"./blog")
+// make_navigate(demos)
 make_navigate(resume)
 
 

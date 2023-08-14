@@ -15,7 +15,6 @@ const sidebar = document.getElementById("sidebar")
 const blogcanvas = document.getElementById("blogcanvas")
 const svg = document.getElementById("canvas")
 
-
 //do colors
 document.body.style.setProperty("--light", make_light_color_less_variance())
 document.body.style.setProperty("--dark", make_dark_color_less_variance())
@@ -48,21 +47,23 @@ async function select_blog(element, link) {
     .replace(/<script>.*?<\/script>/, "")
     .replace(/<body>(.*)<\/body>/, "$1")
     .trim()
+  
+  window.history.replaceState(null, "", link)
 }
 
 //async stuff (thanks javascript)
 (async ()=>{
   
   //populate sidebar
-  const table_of_contents = (await get_raw("../static/table_of_contents.html"))
-    .replace(/^<link.*?>\n/, "")
+  const table_of_contents = (await get_raw("/static/blogs/table-of-contents/index.html"))
+    .replace(/<link.*?>n/, "")
     .replace(/style=".*?"/, "")
   sidebar.insertAdjacentHTML("beforeend", table_of_contents)
   
   //remove hrefs and do onclicks
   for (const bloglink of document.querySelectorAll("#tableofcontents a")) {
-    const newlink = bloglink.getAttribute("href").replace(/.*(blogs\/.+\.html)/, "../static/$1")
-    bloglink.addEventListener("click", ()=>select_blog(bloglink, newlink))
+    const link = bloglink.getAttribute("href")
+    bloglink.addEventListener("click", ()=>select_blog(bloglink, link))
     bloglink.removeAttribute("href")
   }
   

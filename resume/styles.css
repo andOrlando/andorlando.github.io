@@ -1,0 +1,149 @@
+:root {
+  font-family: Georgia,sans-serif;
+
+  --light: #c8e0ce;
+  --dark: #085c30;
+  /*--darker: ;
+  --accent: ;*/
+}
+
+body {
+  /*background: var(--darker);*/
+  margin: 0;
+}
+
+#resume {
+  max-width:8.5in;
+  max-height: 11in;
+  margin:auto;
+  position:inherit;
+  padding: 15px 25px;
+}
+
+/*** root ***/
+.root > .header {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: var(--light)
+}
+
+.root > .children {
+  column-count: 2;
+  /* column-fill: auto; */
+  column-fill: balance;
+}
+
+.root > .header > .info {
+  width: 100%;
+  margin-left: 15px;
+}
+.root > .header > .info > .title,
+.root > .header > .info > .subtitle {
+  display: inline
+}
+.root > .header > .info > .title {
+  font-size: 40px;
+}
+.root > .header > .info > .subtitle {
+  font-size: 24px;
+}
+.root > .header > .info > .subtitle::before {
+  content: "";
+}
+.link {
+  white-space: nowrap;
+  height: 25px;
+  display: flex;
+  margin-bottom: 2px;
+}
+.link:last-child {
+  margin-bottom: 0;
+}
+.link > svg {
+  width: 25px;
+  height: 25px;
+  margin-right: 6px;
+}
+.link > a {
+  display: block;
+  margin: auto;
+}
+
+
+/*** common ***/
+.title {
+  font-weight: bold;
+}
+.subtitle::before,
+.description::before {
+  content: "\a";
+  white-space: pre;
+}
+.date {
+  font-style: italic;
+  float: right;
+}
+p {
+  margin: 0;
+}
+a {
+  color: var(--dark);
+  font-weight: bold;
+}
+
+/*** depth based stuff ***/
+.depth-1 {
+  border-left: 8px var(--light) solid;
+  padding-left: 8px;
+  margin-bottom: 16px;
+}
+.depth-1 > .title {
+  font-size: 24px;
+}
+.depth-1 > .subtitle {
+  font-syle: italic;
+  color: gray;
+}
+.depth-2 {
+  margin-top: 10px;
+}
+
+/*** tags ***/
+.tags > .title {
+  display: inline;
+  font-weight: normal;
+  font-weight: bold;
+}
+.tags > .title::after {
+  content: ":";
+  margin-right: 3px;
+}
+.tagbox {
+  display: inline;
+}
+.tagbox > * {
+  margin-right: 5px !important;
+}
+.tag {
+  background: var(--light);
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 5px;
+  margin: 2px 0px;
+}
+
+/*** bullets ***/
+.bullets > ul {
+  margin: 0px;
+  padding-inline-start: 20px;
+}
+
+/*** key value stuff ***/
+.key::after {
+  content: ":";
+  margin-right: 3px;
+}
+.key {
+  font-weight: bold;
+}

@@ -4,7 +4,7 @@ category: stupid stuff; date: 13/7/2023;
 So it's not even the first week of College and I get covid. I go home, isolate
 myself on the third floor, have my entire family wait on me and do absolutely
 nothing but stare at one of a couple screens and feel miserable for the next
-two weeks. During that time of stairing at screens and feeling miserable, however,
+two weeks. During that time of staring at screens and feeling miserable, however,
 I got into notion.
 
 I always was pretty bad with organization but with notion I would just put all
@@ -17,9 +17,9 @@ formula is actually that useful.
 
 ## formulas are cool
 Notion is all about tables. Everything is in a table. In these tables you can
-have formulas. Formulas are basically jaavascript but only expressions and the
+have formulas. Formulas are basically javascript but only expressions and the
 only variables you can access is stuff in the same row as you. Aside from that
-they're pretty versitile and you are in fact allowed regular expresssions which
+they're pretty versatile and you are in fact allowed regular expressions which
 means you can put together some really hacky stuff if need be (which I do lol).
 
 ### time formula
@@ -113,7 +113,7 @@ so I'm not writing about them) and we were contemplating whether something like 
 was possible to emulate in notion. My thoughts on its viability were something like "nah, oh wait,
 nvm, oh actually no, wait yes, actually no, wait maybe" until I settled on a "probably."
 
-The reason I deliberated so much was becuase there were a good number of barriers preventing this
+The reason I deliberated so much was because there were a good number of barriers preventing this
 from being possible, and the only way I overcame them was with some pretty insane regex hackiness.
 
 First, how do I link two tables together? I need one table to display the schedule (the calendar)
@@ -138,7 +138,7 @@ Day of week is pretty easy, we replace all entries with days other than monday w
 
 Then we get to time. This is where it gets really difficult--First, we have to effectively
 do integer comparison in regex. How do you do do that? Well you have to use dynamic regular
-expressions. We basically prune all the times outside our winodw. We do this by using the fact
+expressions. We basically prune all the times outside our window. We do this by using the fact
 that `[0-5]` will match all numbers from 0 to 5. So if we do `[0-n]`, we can effectively match all
 numbers less than `n`. Basically I do that 8 times, one for each digit of start time, and one for 
 each digit of end time
@@ -208,14 +208,14 @@ think notion was really optimized for this. Notion wasn't really made for this k
 in the first place
 
 ## Conclusion
-So I didn't really use notion my second semster of college because with all my formulas it was
+So I didn't really use notion my second semester of college because with all my formulas it was
 starting to get slow and unorganized--it was almost like a messy bedroom. Additionally, basically
-all my work was assigned at a much slower pace. Most of my assignemtns were on a biweekly basis
+all my work was assigned at a much slower pace. Most of my assignments were on a biweekly basis
 and since my time thing only would show stuff one week at a time, it resulted in me missing stuff,
-and becasue of that I started to wean off notion. I was overly reliant the first semester, so when
+and because of that I started to wean off notion. I was overly reliant the first semester, so when
 the second semester came and it wasn't up to snuff, I kinda suffered for it.
 
-That's not to say it's not redemable, however! I might pick it back up next semester and just add
+That's not to say it's not redeemable, however! I might pick it back up next semester and just add
 a biweekly view if I have biweekly stuff. It's relatively easy to do and likely doesn't even require
 rewriting anything. That being said, notion is still an electron app and is definitely a little
 slow and bloated for my taste.
