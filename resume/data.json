@@ -2,7 +2,7 @@
   "type": "root",
   "title": "Bennett Gillig",
   "subtitle": "writes cool code sometimes",
-  "description": "College sophomore who's interested in writing high-performance code, open source software and rhythm games.",
+  "description": "College sophomore who's interested in writing high-performance code, open source software and rhythm games. Currently looking for a software development internship.",
   "links": [
     {
       "name": "andOrlando",
@@ -22,10 +22,10 @@
   ],
   "content": [
     {
-      "title": "education",
+      "title": "Education",
       "content": [
         {
-          "title": "UMass Amherst",
+          "title": "University of Massachusetts Amherst",
           "date": "2022-2026",
           "content": [
             {
@@ -33,7 +33,7 @@
               "content": [
                 ["GPA", "3.94"],
                 ["Majors", "Computer Science, Computer Engineering"],
-                ["Coursework", "(2022) Data Structures and Algorithms, Multivariable Calculus, Linear Algebra, (2023) Introduction to Computation, Computer Systems Principles, Intro to Digital and Computer Systems, Computational Tools for EC"]
+                ["Coursework", "<i>(2023)</i> Introduction to Computation, Computer Systems Principles, <i>(2022)</i> Multivariable Calc"]
               ]
             }
           ]
@@ -45,8 +45,8 @@
             {
              "type": "kv",
               "content": [
-                ["Coursework", "(2018) AP Computer Science, (2019) AP BC Calculus, (2022) Machine Learning and Artificial Intelligence"],
-                ["Harvard Coursework", "(2021) Data Structures and Algorithms, Linear Algebra"]
+                ["Coursework", "<i>(2022)</i> Machine Learning and Artificial Intelligence, <i>(2019)</i> AP BC Calc, <i>(2018)</i> AP Computer Science"],
+                ["Harvard Coursework", "<i>(2021)</i> Data Structures and Algorithms, Linear Algebra"]
               ]
             }
           ]
@@ -54,24 +54,24 @@
       ]
     },
     {
-      "title": "projects",
+      "title": "Projects",
       "content": [
         {
           "type": "bullets",
           "title": "<a href='https://github.com/andOrlando/rubato'>Rubato</a>",
-          "subtitle": "Inbetweening library for <a href='https://github.com/awesomeWM/awesome'>awesomeWM</a> written in Lua",
           "date": "2020-2022",
           "content": [
-            "Tweens between two numbers using the velocity graph to ensure smooth transitions between animations",
+            "Inbetweening library for <a href='https://github.com/awesomeWM/awesome'>awesomeWM</a> written in Lua",
+            "Ensures a continuous velocity graph during animations for mathematically perfect interruptions",
             "~1900 peak biweekly downloads and ~210 stars on GitHub"
           ]
         },
         {
           "type": "bullets",
           "title": "<a href='https://github.com/andOrlando/color'>Color</a>",
-          "subtitle": "Color conversion library for <a href='https://github.com/awesomeWM/awesome'>awesomeWM</a> written in Lua",
           "date": "2020-2022",
           "content": [
+            "Color conversion library for <a href='https://github.com/awesomeWM/awesome'>awesomeWM</a> written in Lua",
             "Converts seamlessly between RGB, HSL and hex in a highly optimized fashion",
             "~800 peak biweekly downloads, ~30 stars on GitHub"
           ]
@@ -79,33 +79,34 @@
         {
           "type": "bullets",
           "title": "Beauty in Code",
-          "subtitle": "Machine learning model written in python that determine whether an arbitrary bit of code would look aesthetically pleasing in my eyes",
+          "exclude": true,
           "date": "2022",
           "content": [
-            "Uses 14 features including fitting the tabs to up to a 10th order polynomial",
+            "Machine learning model written in python that determine whether arbitrary code is aesthetically pleasing",
+            "Uses 14 features including fitting the tabs to up to a 10th order polynomial series",
             "Predicts absolutely nothing useful but is cool anyways"
           ]
         },
         {
           "type": "bullets",
-          "title": "<a>Homework Scripts</a>",
-          "subtitle": "Scripts to automate menial parts of online homework assignments",
+          "title": "<a href='https://github.com/andOrlando/homework-scripts'>Homework Scripts</a>",
           "date": "2022-2023",
           "content": [
-            "Zybooks script finishes everything that's based on completion",
-            "WebAssign script adds calculator that allows for matrix operations",
-            "KendallHuntContent script adds automatic note taking from practice quizzes"
+            "Simple bookmark that automates multiple homework assignment websites",
+            "Fully automated completion sections of Zybooks and will finish a course's worth of homework in <2 hrs",
+            "WebAssign script adds calculator which supports most basic matrix operations",
+            "Fully automated note storage and retrieval from KHC practice tests using localStorage"
           ]
         },
         {
           "type": "bullets",
           "title": "<a href='https://github.com/andOrlando/save-manager'>save-manager</a>",
-          "subtitle": "Version control for files at arbitrary locations written in Rust",
+          "exclude": true,
           "date": "2023",
           "content": [
-            "Fully fleshed out cli including subcommands and flags using <a href='https://github.com/clap-rs/clap'>clap</a>",
-            "CLI takes inspiration from Git and is designed to streamline the process of actually saving and loading the saves",
-            "Written fully cross platform"
+            "Cross-platform version control for files at arbitrary locations written in Rust",
+            "Fully fleshed out command line interface including subcommands and flags using <a href='https://github.com/clap-rs/clap'>clap</a>",
+            "CLI inspired by git branches in order to allow saving and loading with no other arguments"
           ]
         }
       ]
@@ -118,8 +119,9 @@
           "title": "Lab Leader for <a href='https://www.digitalready.org/'>Digital Ready</a>",
           "date": "2023",
           "content": [
-            "thing 1",
-            "thing 2"
+            "Supervised and mentored high-school students through courswork in IT, UX, ML and Python",
+            "Oversaw deliverables such as a Python card game project, portfolio website and certificates in IT and UI/UX",
+            "Authored and delivered lectures, labs and activities"
           ]
         },
         {
@@ -127,16 +129,17 @@
           "title": "Tech Lead for <a href='https://buildumass.com/'>BUILD UMass</a>",
           "date": "2022-present",
           "content": [
-            "Wrote blog website for IUCG using the MERN stack",
-            "Wrote both frontend and backend"
+            "Prototyped and implemented blog website for IUCG using the MERN stack",
+            "Collaborated with client iteratively throughout development",
+            "Organized collaboration throughout the team"
           ]
         },
         {
           "type": "bullets",
           "title": "Tutoring/Teaching",
-          "date": "2018-now",
+          "date": "2018-present",
           "content": [
-            "tutored for <a href='https://www.csvinc.org/'>Cambridge School Volunteers</a>",
+            "Tutored for <a href='https://www.csvinc.org/'>Cambridge School Volunteers</a>",
             "Teaching Assistant for AP Computer Science A",
             "Undergraduate Course Assistant for Computer Systems Principles"
           ]
@@ -160,27 +163,18 @@
             ["HTML"],
             ["CSS"],
             ["Python"],
-            ["Lua"],
-            ["MatLab"],
-            ["Bash"],
-            ["Nix"]
+            ["Lua"]
           ]
         },
         {
           "type": "tags",
           "title": "frameworks/libraries",
           "content": [
-            ["MongoDB"],
             ["Express"],
             ["React"],
             ["NumPy"],
-            ["scikit-learn"],
-            ["xgboost"],
-            ["NodeJS"],
-            ["Cairo"],
             ["Android SDK"],
-            ["Jetpack Compose"],
-            ["Selenium"]
+            ["Jetpack Compose"]
           ]
         },
         {
@@ -189,13 +183,13 @@
           "content": [
             ["Git"],
             ["Regex"],
+            ["MatLab"],
             ["Code Golf"],
-            ["Vim"],
             ["Helix"],
             ["Linux"],
             ["NixOS"],
-            ["Google Sheets"],
-            ["Excel"]
+            ["Beat Saber"],
+            ["Rowing"]
           ]
         }
       ]

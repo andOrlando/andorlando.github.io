@@ -8,7 +8,7 @@ markdown so I can get good SEO (and not because Pratyush bullied me I promise).
 - [ ] demos
 - [ ] about
 - [ ] resume
-- [ ] make homepage actually pick a quadrant instead of just being 3
+- [x] make homepage actually pick a quadrant instead of just being 3
 - [x] make it load the quadrant with javascript faster by doing the placement bit with `<script>`
 - [ ] better inline code rendering in blogs
 - [ ] collapsable blog headers

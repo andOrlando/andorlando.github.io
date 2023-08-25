@@ -1,12 +1,11 @@
 import * as fs from "fs"
-import assert from "assert"
 import { marked, ROOT_DIR } from "./common.js"
 
 //do resume stuff
 const RESUME_PATH = "/static/resume/"
 const RESUME_DATA_PATH = "/resume/data.json"
 
-function create_root({ links, content }, res, depth) {
+function create_root({ links, content, exclude }, res, depth) {
   let info = `<div class="info">${res}</div>`
   let linksbox = ""
   for (const { name, link, icon } of links)
@@ -17,8 +16,10 @@ function create_root({ links, content }, res, depth) {
   let header = `<div class="header">` + info + linksbox + `</div>`
 
   let children = ""
-  for (const item of content)
+  for (const item of content) {
+    if (item.exclude) continue
     children += create_recursive(item, depth+1)
+  }
   
   
   children = `<div class="children">` + children + `</div>`
@@ -64,15 +65,17 @@ function create_recursive(obj, depth=0) {
   let res = ""
   
   //do basic stuff
-  if ("title" in obj) res += `<span class="title">${obj.title}</span>`
-  if ("date" in obj) res += `<span class="date">${obj.date}</span>`
-  if ("subtitle" in obj) res += `<span class="subtitle">${obj.subtitle}</span>`
-  if ("description" in obj) res += `<span class="description">${obj.description}</span>`
+  if (obj.title) res += `<span class="title">${obj.title}</span>`
+  if (obj.date) res += `<span class="date">${obj.date}</span>`
+  if (obj.subtitle) res += `<span class="subtitle">${obj.subtitle}</span>`
+  if (obj.description) res += `<span class="description">${obj.description}</span>`
   
   //if it has a type then do special type stuff
-  if ("type" in obj) res = create_map[obj.type](obj, res, depth)
-  else if ("content" in obj) for (const item of obj.content)
+  if (obj.type) res = create_map[obj.type](obj, res, depth)
+  else if (obj.content) for (const item of obj.content) {
+    if (item.exclude) continue
     res += create_recursive(item, depth+1)
+  }
   
   //finish it off
   let type = "type" in obj ? " " + obj.type : ""
@@ -85,6 +88,7 @@ let res = create_recursive(data)
 res = `<div id="resume">` + res + `</div>`
 res = `<head><title>resume</title></head>` + res
 res = `<link rel="stylesheet" type="text/css" href="/resume/styles.css">` + res
+res = res + `<script src="/resume/index.js" type="module"></script>`
  
 fs.mkdirSync(ROOT_DIR + RESUME_PATH, { recursive: true })
 fs.writeFileSync(ROOT_DIR + RESUME_PATH + "index.html", res)

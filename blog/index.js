@@ -1,9 +1,7 @@
-import { get_raw } from "../lib/fs.js"
-import { blog_sidebar_circles } from "../lib/circle.js"
+import { get_raw } from "/lib/fs.js"
+import { blog_sidebar_circles } from "/lib/circle.js"
 import {
-  make_background_color,
   get_theme,
-  make_dark_color,
   make_darker_background_color,
   make_darkest_background_color,
   make_even_darker_background_color,
