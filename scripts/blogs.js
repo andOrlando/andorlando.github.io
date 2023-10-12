@@ -54,8 +54,9 @@ for (const blog of blogs) {
   //extra stuff
   res = `<body><div id="blog">${res}</div></body>` 
 
-  res = `<link rel="stylesheet" type="text/css" href="/blog/atom-one-dark-reasonable.css">${res}`
+  res = `<link rel="stylesheet" type="text/css" href="/blog/theme.css">${res}`
   res = `<link rel="stylesheet" type="text/css" href="/blog/styles.css">${res}`
+  res = `<link rel="stylesheet" type="text/css" href="/common.css">${res}`
   res = `<head><title>${title}</title></head>${res}`
 
   res = `${res}<script>localStorage.preserveBlog="${name}";window.location.href="/blog"</script>`

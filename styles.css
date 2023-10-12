@@ -1,11 +1,6 @@
 :root {
-  font-family: Verdana,sans-serif;
-  
   --light: #cacaca;
   --dark: #7c7c7c;
-}
-body {
-  margin: 0;
 }
 
 #circles {

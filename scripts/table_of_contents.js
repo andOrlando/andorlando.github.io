@@ -1,6 +1,6 @@
 import * as fs from "fs"
 import assert from "assert"
-import { marked, ROOT_DIR } from "./common.js"
+import { ROOT_DIR } from "./common.js"
 import { entries, BLOG_PATH } from "./blogs.js"
 
 const TABLE_OF_CONTENTS_OUT="/static/blogs/table-of-contents/"
@@ -29,6 +29,7 @@ for (const category of categories) {
 //finishint touches
 res = `<div id="tableofcontents" style="max-width:600px;margin:auto;position:inherit">${res}</div>`
 res = `<link rel="stylesheet" type="text/css" href="/blog/styles.css">` + res
+res = `<link rel="stylesheet" type="text/css" href="/common.css">` + res
 
 fs.mkdirSync(ROOT_DIR + TABLE_OF_CONTENTS_OUT, { recursive: true })
 fs.writeFileSync(ROOT_DIR + TABLE_OF_CONTENTS_OUT + "index.html", res) 

@@ -1,11 +1,11 @@
 import * as fs from "fs"
-import { marked, ROOT_DIR } from "./common.js"
+import { ROOT_DIR } from "./common.js"
 
 //do resume stuff
 const RESUME_PATH = "/static/resume/"
 const RESUME_DATA_PATH = "/resume/data.json"
 
-function create_root({ links, content, exclude }, res, depth) {
+function create_root({ links, content }, res, depth) {
   let info = `<div class="info">${res}</div>`
   let linksbox = ""
   for (const { name, link, icon } of links)
@@ -88,6 +88,7 @@ let res = create_recursive(data)
 res = `<div id="resume">` + res + `</div>`
 res = `<head><title>resume</title></head>` + res
 res = `<link rel="stylesheet" type="text/css" href="/resume/styles.css">` + res
+res = `<link rel="stylesheet" type="text/css" href="/common.css">` + res
 res = res + `<script src="/resume/index.js" type="module"></script>`
  
 fs.mkdirSync(ROOT_DIR + RESUME_PATH, { recursive: true })

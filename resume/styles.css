@@ -1,10 +1,7 @@
 :root {
-  font-family: Georgia,sans-serif;
-
   --light: #c8e0ce;
   --dark: #085c30;
-  /*--darker: ;
-  --accent: ;*/
+  font-size: 14px;
 }
 
 body {
@@ -17,7 +14,7 @@ body {
   max-height: calc(11in - 16px);
   margin:auto;
   position:inherit;
-  padding: 8px 12px;
+  padding: 8px 8px;
 }
 
 /*** root ***/
@@ -53,7 +50,7 @@ body {
 }
 .link {
   white-space: nowrap;
-  height: 25px;
+  height: 20px;
   display: flex;
   margin-bottom: 2px;
 }
@@ -61,13 +58,14 @@ body {
   margin-bottom: 0;
 }
 .link > svg {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   margin-right: 6px;
 }
 .link > a {
   display: block;
-  margin: auto;
+  margin: auto 0px;
+  height: 100%
 }
 
 
