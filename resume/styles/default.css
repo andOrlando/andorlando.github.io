@@ -4,11 +4,6 @@
   font-size: 14px;
 }
 
-body {
-  /*background: var(--darker);*/
-  margin: 0;
-}
-
 #resume {
   max-width: calc(8.5in - 24px);
   max-height: calc(11in - 16px);
@@ -159,8 +154,7 @@ div:first-of-type.depth-2 {
 
 /*** key value stuff ***/
 .key::after {
-  content: ":";
-  margin-right: 3px;
+  content: ": ";
 }
 .key {
   font-weight: bold;

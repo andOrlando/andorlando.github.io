@@ -2,7 +2,8 @@ import * as fs from "fs"
 import { ROOT_DIR } from "./common.js"
 
 //do resume stuff
-const RESUME_PATH = "/static/resume/"
+const RESUME_STATIC_PATH = "/static/resume/"
+const RESUME_PATH = "/resume/"
 const RESUME_DATA_PATH = "/resume/data.json"
 
 function create_root({ links, content }, res, depth) {
@@ -85,13 +86,31 @@ function create_recursive(obj, depth=0) {
 const data = JSON.parse(fs.readFileSync(ROOT_DIR + RESUME_DATA_PATH, "utf8"))
 let res = create_recursive(data)
 
-res = `<div id="resume">` + res + `</div>`
-res = `<head><title>resume</title></head>` + res
-res = `<link rel="stylesheet" type="text/css" href="/resume/styles.css">` + res
-res = `<link rel="stylesheet" type="text/css" href="/common.css">` + res
-res = res + `<script src="/resume/index.js" type="module"></script>`
- 
-fs.mkdirSync(ROOT_DIR + RESUME_PATH, { recursive: true })
-fs.writeFileSync(ROOT_DIR + RESUME_PATH + "index.html", res)
+//create style switching buttons
+const styles = fs.readdirSync(ROOT_DIR + RESUME_PATH + "styles/", "utf8")
+const switch_script = `
+const styles = [${styles.map(a => `"${a}"`).join(",")}]
+let idx = styles.indexOf("default.css")
+
+document.getElementById("switchbutton").addEventListener("click", () => {
+  idx = (idx + 1) % styles.length
+  document.getElementById("switchstyle").setAttribute("href", "${RESUME_PATH}/styles/" + styles[idx])
+})`
+
+//create the document
+const document = `
+<head><title>resume</title></head>
+<link rel="stylesheet" type="text/css" href="/common.css">
+<link id="switchstyle" rel="stylesheet" type="text/css" href="${RESUME_PATH}/styles/default.css">
+<div id="resume">` + res + `</div>
+<div style="position: fixed; top: 0">
+<button id="switchbutton">switch style</button>
+<button onclick="document.querySelectorAll('button').forEach(a => a.remove())">kill both</button>
+</div>
+<script>`+ switch_script + `</script>
+<script src="${RESUME_PATH}/index.js" type="module"></script>`
+
+fs.mkdirSync(ROOT_DIR + RESUME_STATIC_PATH, { recursive: true })
+fs.writeFileSync(ROOT_DIR + RESUME_STATIC_PATH + "index.html", document)
 console.log("Finished writing resume")
 

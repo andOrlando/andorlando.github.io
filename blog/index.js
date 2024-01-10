@@ -39,7 +39,7 @@ async function select_blog(element, link) {
   
   const blog = await get_raw(link)
   blogcanvas.innerHTML = blog
-    .replace(/<link.*?>/, "")
+    .replace(/<link.*?>/, "") //why do I do this twice?
     .replace(/<link.*?>/, "")
     .replace(/<head>.*?<\/head>/, "")
     .replace(/<script>.*?<\/script>/, "")

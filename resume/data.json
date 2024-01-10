@@ -23,6 +23,11 @@
       "name": "",
       "link": "",
       "icon": "<a href='mailto:bennettgillig@gmail.com'>bennettgillig@gmail.com</a>"
+    },
+    {
+      "name": "",
+      "link": "",
+      "icon": "<a href='https://andorlando.github.io'>https://andorlando.github.io</a>"
     }
   ],
   "content": [
@@ -31,21 +36,21 @@
       "content": [
         {
           "title": "University of Massachusetts Amherst",
-          "date": "2022-2026",
+          "date": "09/2022-05/2026",
           "content": [
             {
               "type": "kv",
               "content": [
-                ["GPA", "3.94 (Honors College, Dean's List)"],
+                ["GPA", "3.91 (Honors College, Dean's List)"],
                 ["Majors", "Computer Science, Computer Engineering"],
-                ["Coursework", "<i>(2023)</i> Introduction to Computation, Computer Systems Principles, Programming Methodology, Reasoning under Uncertainty, <i>(2022)</i> Calculus III, Data Structures, Computational Tools for ECE, Intro to Digital and Computer Systems"]
+                ["Coursework", "<i>(2023)</i> Introduction to Computation, Computer Systems Principles, Programming Methodology, Reasoning under Uncertainty, <i>(2022)</i> Calculus III, Data Structures, Computational Tools for ECE, Intro to Digital and Computer Systems, Programming Methodology, Differential Equations, Reasoning under Uncertainty"]
               ]
             }
           ]
         },
         {
           "title": "Cambridge Rindge and Latin School",
-          "date": "2018-2022",
+          "date": "09/2018-05/2022",
           "content": [
             {
              "type": "kv",
@@ -61,6 +66,16 @@
     {
       "title": "Projects",
       "content": [
+        {
+          "type": "bullets",
+          "title": "<a href='https://devpost.com/software/risc-v-js'>RISC-V.js</a> for HackUMASS XI",
+          "date": "2023",
+          "content": [
+            "Won Best Software Hack and Best Security Hack in HackUMASS XI",
+            "Emulates a RISC-V processor (specifically the rv32ima+zicsr/zfenci instruction set) in the browser",
+            "Runs most binaries compiled for said instruction set in the browser and has basic I/O"
+          ]
+        },
         {
           "type": "bullets",
           "title": "<a href='https://github.com/andOrlando/rubato'>Rubato</a>",
@@ -84,7 +99,19 @@
         },
         {
           "type": "bullets",
+          "title": "<a href='https://github.com/andOrlando/save-manager'>save-manager</a>",
+          "exclude": false,
+          "date": "2023",
+          "content": [
+            "Cross-platform version control for files at arbitrary locations written in Rust",
+            "Fully fleshed out command line interface including subcommands and flags using <a href='https://github.com/clap-rs/clap'>clap</a>",
+            "CLI inspired by git branches in order to allow saving and loading with no other arguments"
+          ]
+        },
+        {
+          "type": "bullets",
           "title": "<a href='https://www.kaggle.com/code/bennettgillig/beauty-in-code'>Beauty in Code</a>",
+          "exculde": true,
           "date": "2022",
           "content": [
             "Machine learning model written in python that determine whether arbitrary code is aesthetically pleasing",
@@ -96,54 +123,44 @@
           "type": "bullets",
           "title": "<a href='https://github.com/andOrlando/homework-scripts'>Homework Scripts</a>",
           "date": "2022-2023",
+          "exclude": true,
           "content": [
             "Simple bookmark that automates multiple homework assignment websites",
             "Zybooks automatically finishes completion sections of zybooks and finishes a course's worth of homework in ~2 hrs",
             "WebAssign opens javascript repl where displayed matrices are local variables on which you can perform matrix arithmatic",
             "KendallHuntContent script automates storage and retrieval of practice test questions using localStorage with a fully-featured UI and data transfer"
           ]
-        },
-        {
-          "type": "bullets",
-          "title": "<a href='https://github.com/andOrlando/save-manager'>save-manager</a>",
-          "exclude": false,
-          "date": "2023",
-          "content": [
-            "Cross-platform version control for files at arbitrary locations written in Rust",
-            "Fully fleshed out command line interface including subcommands and flags using <a href='https://github.com/clap-rs/clap'>clap</a>",
-            "CLI inspired by git branches in order to allow saving and loading with no other arguments"
-          ]
         }
       ]
     },
     {
-      "title": "Experience",
+      "title": "Work and Volunteering Experience",
       "content": [
         {
           "type": "bullets",
           "title": "Lab Leader for <a href='https://www.digitalready.org/'>Digital Ready</a>",
-          "date": "2023",
+          "date": "06/2023-09/2023",
           "content": [
-            "Supervised and mentored high-school students through courswork in IT, UX, ML and Python",
-            "Oversaw deliverables such as a Python card game project, portfolio website and certificates in IT and UI/UX",
-            "Authored and delivered lectures, labs and activities"
+            "Supervised and mentored high-school for through a Roxbury Community College course",
+            "Oversaw deliverables such as a Python card game project, portfolio website and Google certificates in IT and UI/UX",
+            "Authored and presented lectures, labs and activities"
           ]
         },
         {
           "type": "bullets",
-          "title": "Project Lead for <a href='https://buildumass.com/'>BUILD UMass</a>",
-          "date": "2022-present",
+          "title": "Project Lead for <a href='https://buildumass.com/'>BUILD UMass</a> pro bono",
+          "date": "09/2022-present",
           "content": [
-            "Prototyped and implemented blog website for IUCG using the MERN stack",
+            "Prototyped and implemented blog website for IUCG using the MERN stack and AWS S3 cloud object storage",
             "Collaborated with client iteratively throughout development",
-            "Organized a team of 4 software developers and 2 project managers"
+            "Oversaw a team of 4 software developers and 2 project managers"
           ]
         },
         {
           "type": "bullets",
           "title": "Co-leader of <a href='https://aspine.cpsd.us'>Aspine</a> club",
           "exclude": true,
-          "date": "2020-2022",
+          "date": "10/2020-05/2022",
           "content": [
             "Provided alternative grades portal written in vanilla JS to ~3,000 students",
             "Wrote function to add tooltips to tagged elements, snackbars and a screen size-responsive action bar/side bar pair"
@@ -154,9 +171,10 @@
           "title": "Tutoring/Teaching",
           "date": "2018-present",
           "content": [
-            "Tutored for <a href='https://www.csvinc.org/'>Cambridge School Volunteers</a>",
-            "Teaching Assistant for AP Computer Science A",
-            "Undergraduate Course Assistant for Computer Systems Principles"
+            "Undergraduate Course Assistant for Computer Systems Principles",
+            "Undergraduate Course Assistant for Introduction to Computation",
+            "Volunteered as tutor for <a href='https://www.csvinc.org/'>Cambridge School Volunteers</a>",
+            "Volunteered as Teaching Assistant for AP Computer Science A"
           ]
         }
       ]
@@ -199,12 +217,8 @@
             ["Git"],
             ["Regex"],
             ["MatLab"],
-            ["Code Golf"],
-            ["Helix"],
             ["Linux"],
-            ["NixOS"],
-            ["Beat Saber"],
-            ["Rowing"]
+            ["NixOS"]
           ]
         }
       ]
