@@ -99,9 +99,11 @@ document.getElementById("switchbutton").addEventListener("click", () => {
 
 //create the document
 const document = `
-<head><title>resume</title></head>
-<link rel="stylesheet" type="text/css" href="/common.css">
-<link id="switchstyle" rel="stylesheet" type="text/css" href="${RESUME_PATH}/styles/default.css">
+<head>
+  <title>resume</title>
+  <link rel="stylesheet" type="text/css" href="/common.css">
+  <link id="switchstyle" rel="stylesheet" type="text/css" href="${RESUME_PATH}/styles/default.css">
+</head>
 <div id="resume">` + res + `</div>
 <div style="position: fixed; top: 0">
 <button id="switchbutton">switch style</button>

@@ -52,17 +52,19 @@ for (const blog of blogs) {
   res += marked.parse(raw)
   
   //extra stuff
-  res = `<body><div id="blog">${res}</div></body>` 
-
-  res = `<link rel="stylesheet" type="text/css" href="/blog/theme.css">${res}`
-  res = `<link rel="stylesheet" type="text/css" href="/blog/styles.css">${res}`
-  res = `<link rel="stylesheet" type="text/css" href="/common.css">${res}`
-  res = `<head><title>${title}</title></head>${res}`
-
-  res = `${res}<script>localStorage.preserveBlog="${name}";window.location.href="/blog"</script>`
+  const document = `
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/blog/theme.css">
+    <link rel="stylesheet" type="text/css" href="/blog/styles.css">
+    <link rel="stylesheet" type="text/css" href="/common.css">
+    <title>` + title + `</title>
+  </head>
+  <body><div id="blog">` + res + `</div></body>
+  <script>localStorage.preserveBlog="${name}";window.location.href="/blog"</script>`
   
   fs.mkdirSync(ROOT_DIR + BLOG_OUT + name, { recursive: true })
-  fs.writeFileSync(ROOT_DIR + BLOG_OUT + name + "/index.html", res)
+  fs.writeFileSync(ROOT_DIR + BLOG_OUT + name + "/index.html", document)
   
   //copy all assets
   

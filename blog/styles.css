@@ -15,6 +15,7 @@ body {
 #root {
   display: flex;
 }
+/* default state of sticky when larger than 1100 */
 #sidebar {
   --width: 300px;
   min-width: var(--width);
@@ -31,7 +32,7 @@ body {
 #canvas {
   background: #262626;
   min-width: var(--width);
-  height: 100vh;
+  height: 100%;
   position: absolute;
   right: 0;
   transform: rotate(180deg);
@@ -39,8 +40,8 @@ body {
 #hamburger {
   fill: #ffffff;
   cursor: pointer;
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   position: fixed;
   z-index: 2;
   bottom: 10px;
@@ -48,10 +49,13 @@ body {
   user-select: none;
 }
 #tableofcontents {
-  min-width: calc(var(--width) - 20px);
+  min-width: var(--width);
   position: absolute;
   right: 0;
+  box-sizing: border-box;
   padding: 10px;
+  overflow: auto;
+  height: 100%;
 }
 #tableofcontents h1 {
   font-size: 22;
@@ -100,7 +104,7 @@ body {
   transform: scaleX(1);
 }
 #tableofcontents a + h1 {
-  padding-top: 32px;
+  padding-top: 24px;
 }
 
 #blogcanvas {
@@ -176,5 +180,6 @@ body {
 @media only screen and (max-width: 1100px) {
   #sidebar {
     position: fixed;
+    height: 100%;
   }
 }

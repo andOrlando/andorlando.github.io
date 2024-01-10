@@ -1,6 +1,9 @@
 HackUMASS 2023
 category: school; date: 1/4/2024;
 
+- [X] devpost is [here](https://devpost.com/software/risc-v-js)
+- [X] github is [here](https://github.com/PianoPanda/HackUMASSXI)
+
 So me and four of my friends won Best Software and Best Security at our school's hackathon. We didn't finish what we sought to set out, but we ended up with honestly a pretty seriously cool project that's like one more hackathon day away from being fully featured.
 
 ### initial idea
@@ -136,6 +139,12 @@ So we won best software hack, which is pretty cool since out of literally all th
 ### awards ceremony
 
 yeah I was asleep the entire time lol I was completely passed out for like three hours and then when I woke up I had a ton of messages and missed calls. There's a really good picture  of Jun, Steven, Isaac, Max and some other organizers or something? recieving our awards which is especially funny given that had I been there all my roommates would be in that picture (me, Steven, Isaac and Jun live together) but I was completely out.
+
+On the left we have my team claiming their prizes and three orgnizers, one of whom being my roommate, and then we have me at the same time:
+<div style="display: flex">
+<img style="width: 50%" src="/blog/assets/hackumass2023/everyoneelse.jpeg"></img>
+<img style="width: 50%" src="/blog/assets/hackumass2023/meinbed.jpeg"></img>
+</div>
 
 We did only get four prizes though due to the nature of the competition, so Marshall didn't end up getting anything except for the `w` keycap from the mechanical keyboard that I won, which I traded with his, which we exchanged during a 240 midterm that I ended up getting a 65 on.
 

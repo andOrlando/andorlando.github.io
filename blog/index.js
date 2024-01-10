@@ -39,12 +39,11 @@ async function select_blog(element, link) {
   
   const blog = await get_raw(link)
   blogcanvas.innerHTML = blog
-    .replace(/<link.*?>/, "") //why do I do this twice?
-    .replace(/<link.*?>/, "")
-    .replace(/<head>.*?<\/head>/, "")
+    .replace(/<head>[\s\S]*?<\/head>/, "")
     .replace(/<script>.*?<\/script>/, "")
     .replace(/<body>(.*)<\/body>/, "$1")
     .trim()
+
   
   window.history.replaceState(null, "", link)
 }
@@ -53,8 +52,9 @@ async function select_blog(element, link) {
 (async ()=>{
   
   //populate sidebar
+  console.log(await get_raw("/static/blogs/table-of-contents/index.html"))
   const table_of_contents = (await get_raw("/static/blogs/table-of-contents/index.html"))
-    .replace(/<link.*?>n/, "")
+    .replace(/<head>[\s\S]*?<\/head>/, "")
     .replace(/style=".*?"/, "")
   sidebar.insertAdjacentHTML("beforeend", table_of_contents)
   

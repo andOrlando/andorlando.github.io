@@ -17,7 +17,7 @@ for (const [name, data] of Object.entries(entries).filter(([_, a])=>!("category"
   res += `<a uid="${name}" href="/static/blogs/${name}">${data.title}</a>`
 
 const categories = new Set()
-for (const [name, data] of Object.entries(entries))
+for (const [_name, data] of Object.entries(entries))
   if ("category" in data) categories.add(data.category)
 
 for (const category of categories) {
@@ -26,11 +26,15 @@ for (const category of categories) {
     res += `<a uid="${name}" href="/static/blogs/${name}">${data.title}</a>`
 }
 
-//finishint touches
-res = `<div id="tableofcontents" style="max-width:600px;margin:auto;position:inherit">${res}</div>`
-res = `<link rel="stylesheet" type="text/css" href="/blog/styles.css">` + res
-res = `<link rel="stylesheet" type="text/css" href="/common.css">` + res
+//finishing touches
+const document = `
+<head>
+  <link rel="stylesheet" type="text/css" href="/blog/styles.css">
+  <link rel="stylesheet" type="text/css" href="/common.css">
+  <title>Table of Contents</title>
+</head>
+<div id="tableofcontents" style="max-width:600px;margin:auto;position:inherit">` + res + `</div>`
 
 fs.mkdirSync(ROOT_DIR + TABLE_OF_CONTENTS_OUT, { recursive: true })
-fs.writeFileSync(ROOT_DIR + TABLE_OF_CONTENTS_OUT + "index.html", res) 
+fs.writeFileSync(ROOT_DIR + TABLE_OF_CONTENTS_OUT + "index.html", document) 
 console.log("Finished writing table of contents")
