@@ -164,7 +164,7 @@ document.getElementById("switchbutton").addEventListener("click", () => {
 })`
 ```
 
-where I have to generate a javascript array as text from a different javascript array which honestly is probably one of the most disgusting things I've ever written, but hey you gotta do what you gotta do and I think this is probably the most idiomatic solution save completely switching to a templating language (as Pratyush suggested) which I definitely won't do because I don't want to have to make it do the weird static -> non-static (via script) redirection thing I got going.
+where I have to generate a javascript array as text from a different javascript array which honestly is probably one of the most disgusting things I've ever written, but hey you gotta do what you gotta do and I think this is probably the most idiomatic solution save completely switching to a templating language (as Pratyush suggested) which I definitely won't do because I don't want to have to make it do the weird static→non-static (via script) redirection thing I got going.
 
 ### everything else
 everything else I do to it will go here I guess. It's not done yet
