@@ -168,7 +168,18 @@ body {
   margin: 0;
   display: inline;
 }
-
+#blog pre code {
+    color: inherit;
+    background: none;
+    padding: 0px;
+    border-radius: inherit;
+}
+#blog code {
+    padding: .25em .3em;
+    background: var(--darker);
+    border-radius: 4px;
+    color: var(--light);
+}
 #blog h1.bigtitle {
   margin-bottom: 16px;
   margin-top: 48px;
