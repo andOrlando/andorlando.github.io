@@ -2,7 +2,7 @@
   "type": "root",
   "title": "Bennett Gillig",
   "subtitle": "writes cool code sometimes",
-  "description": "College sophomore who's interested in writing high-performance code, open source software and rhythm games. Currently looking for a software development internship. Read more on my personal website: <a href='https://andorlando.github.io'>andorlando.github.io</a>.",
+  "description": "College junior who's interested in writing high-performance code, open source software and rhythm games. Read more on my personal website: <a href='https://andorlando.github.io'>andorlando.github.io</a>.",
   "links": [
     {
       "name": "andOrlando",
@@ -25,9 +25,10 @@
       "icon": "<a href='mailto:bennettgillig@gmail.com'>bennettgillig@gmail.com</a>"
     },
     {
-      "name": "",
-      "link": "",
-      "icon": "<a href='https://andorlando.github.io'>https://andorlando.github.io</a>"
+      "name": "andorlando.github.io",
+      "link": "https://andorlando.github.io",
+      "icon": ""
+
     }
   ],
   "content": [
@@ -41,9 +42,9 @@
             {
               "type": "kv",
               "content": [
-                ["GPA", "3.91 (Honors College, Dean's List)"],
+                ["GPA", "3.94 (Honors College, Dean's List)"],
                 ["Majors", "Computer Science, Computer Engineering"],
-                ["Coursework", "<i>(2023)</i> Introduction to Computation, Computer Systems Principles, Programming Methodology, Reasoning under Uncertainty, <i>(2022)</i> Calculus III, Data Structures, Computational Tools for ECE, Intro to Digital and Computer Systems, Programming Methodology, Differential Equations, Reasoning under Uncertainty"]
+                ["Coursework", "<i>(2024)</i> Introduction to Algorithms, Introduction to Software Engineering, <i>(2023)</i> Introduction to Computation, Computer Systems Principles, Programming Methodology, Differential Equations, <i>(2022)</i> Calculus III, Data Structures"]
               ]
             }
           ]
@@ -51,6 +52,7 @@
         {
           "title": "Cambridge Rindge and Latin School",
           "date": "09/2018-05/2022",
+          "exclude": true,
           "content": [
             {
              "type": "kv",
@@ -64,10 +66,68 @@
       ]
     },
     {
+      "title": "Experience",
+      "content": [
+        {
+          "type": "bullets",
+          "title": "System Level Debug Engineer Intern for Intel",
+          "date": "05/2024-08/2024",
+          "content": [
+            "Created an internal tool to keep track of state across test systems, host systems and a wiki for XEG teams and Lab Techs",
+            "Created a debug tool that hooks into a seperate debug tool to test plugins. Works for both client and DCAI plugins",
+            "Created a repository of both new and old best practices for a debug tool",
+            "Ramped up on Intel Xeon Architecture and IPs"
+          ]
+        },
+        {
+          "type": "bullets",
+          "title": "Lab Leader for <a href='https://www.digitalready.org/'>Digital Ready</a>",
+          "date": "06/2023-09/2023",
+          "content": [
+            "Supervised and mentored high-school for through a Roxbury Community College course",
+            "Oversaw deliverables such as a Python card game project, portfolio website and Google certificates in IT and UI/UX",
+            "Authored and presented lectures, labs and activities"
+          ]
+        },
+        {
+          "type": "bullets",
+          "title": "Co-leader of <a href='https://aspine.cpsd.us'>Aspine</a> club",
+          "exclude": true,
+          "date": "10/2020-05/2022",
+          "content": [
+            "Provided alternative grades portal written in vanilla JS to ~3,000 students",
+            "Wrote function to add tooltips to tagged elements, snackbars and a screen size-responsive action bar/side bar pair"
+          ]
+        },
+        {
+          "type": "bullets",
+          "title": "Tutoring/Teaching",
+          "date": "2018-present",
+          "content": [
+            "2x Undergraduate Course Assistant for Computer Systems Principles",
+            "Undergraduate Course Assistant for Introduction to Computation",
+            "Volunteered as tutor for <a href='https://www.csvinc.org/'>Cambridge School Volunteers</a>",
+            "Volunteered as Teaching Assistant for AP Computer Science A"
+          ]
+        },
+        {
+          "type": "bullets",
+          "title": "Project Lead for <a href='https://buildumass.com/'>BUILD UMass</a> pro bono",
+          "date": "09/2022-present",
+          "content": [
+            "Prototyped and implemented blog website for IUCG using the MERN stack and AWS S3 cloud object storage",
+            "Collaborated with client iteratively throughout development",
+            "Oversaw a team of 6 software developers and 2 project managers"
+          ]
+        }
+      ]
+    },
+    {
       "title": "Projects",
       "content": [
         {
           "type": "bullets",
+          "exclude": true,
           "title": "<a href='https://devpost.com/software/risc-v-js'>RISC-V.js</a> for HackUMASS XI",
           "date": "2023",
           "content": [
@@ -78,12 +138,21 @@
         },
         {
           "type": "bullets",
+          "title": "Hackathon Wins",
+          "date": "2023-2024",
+          "content": [
+            "<a href='https://devpost.com/software/risc-v-js'>RISC-V.js</a> won Best Software and Best Security out of 64 projects in HackUMassXI. Emulated a RISC-V processor (rv32ima) in the browser and could run (almost) any arbitrary binary compiled for its instruction set",
+            "<a href='https://devpost.com/software/bad-apple-but-google-calendar'>Bad Apple in Google Calendar</a> won Cutest Hack out of 36 projects in HackHer413. Used ffmpeg to turn a video into frames, in house javascript code to turn frames into scaled pixel matrices and then into more optimized calendar events, then the Google Calendar API in order to upload them to a calendar"
+          ]
+        },
+        {
+          "type": "bullets",
           "title": "<a href='https://github.com/andOrlando/rubato'>Rubato</a>",
           "date": "2020-2022",
           "content": [
             "Inbetweening library for <a href='https://github.com/awesomeWM/awesome'>awesomeWM</a> written in Lua",
             "Animates positions by calculating a numeric integral of a velocity graph for the animation, resulting in a continuous velocity graph. This allows me to chain animations together mathematically perfectly, resulting in clean interruptions",
-            "~1900 peak biweekly downloads and ~220 stars on GitHub, is the premier animation library for awesomeWM"
+            "~1900 peak biweekly downloads and ~240 stars on GitHub, is the premier animation library for awesomeWM"
           ]
         },
         {
@@ -100,7 +169,6 @@
         {
           "type": "bullets",
           "title": "<a href='https://github.com/andOrlando/save-manager'>save-manager</a>",
-          "exclude": false,
           "date": "2023",
           "content": [
             "Cross-platform version control for files at arbitrary locations written in Rust",
@@ -111,7 +179,7 @@
         {
           "type": "bullets",
           "title": "<a href='https://www.kaggle.com/code/bennettgillig/beauty-in-code'>Beauty in Code</a>",
-          "exculde": true,
+          "exclude": true,
           "date": "2022",
           "content": [
             "Machine learning model written in python that determine whether arbitrary code is aesthetically pleasing",
@@ -130,51 +198,16 @@
             "WebAssign opens javascript repl where displayed matrices are local variables on which you can perform matrix arithmatic",
             "KendallHuntContent script automates storage and retrieval of practice test questions using localStorage with a fully-featured UI and data transfer"
           ]
-        }
-      ]
-    },
-    {
-      "title": "Work and Volunteering Experience",
-      "content": [
-        {
-          "type": "bullets",
-          "title": "Lab Leader for <a href='https://www.digitalready.org/'>Digital Ready</a>",
-          "date": "06/2023-09/2023",
-          "content": [
-            "Supervised and mentored high-school for through a Roxbury Community College course",
-            "Oversaw deliverables such as a Python card game project, portfolio website and Google certificates in IT and UI/UX",
-            "Authored and presented lectures, labs and activities"
-          ]
         },
         {
           "type": "bullets",
-          "title": "Project Lead for <a href='https://buildumass.com/'>BUILD UMass</a> pro bono",
-          "date": "09/2022-present",
-          "content": [
-            "Prototyped and implemented blog website for IUCG using the MERN stack and AWS S3 cloud object storage",
-            "Collaborated with client iteratively throughout development",
-            "Oversaw a team of 4 software developers and 2 project managers"
-          ]
-        },
-        {
-          "type": "bullets",
-          "title": "Co-leader of <a href='https://aspine.cpsd.us'>Aspine</a> club",
+          "title": "randmst",
           "exclude": true,
-          "date": "10/2020-05/2022",
+          "date": "2021",
           "content": [
-            "Provided alternative grades portal written in vanilla JS to ~3,000 students",
-            "Wrote function to add tooltips to tagged elements, snackbars and a screen size-responsive action bar/side bar pair"
-          ]
-        },
-        {
-          "type": "bullets",
-          "title": "Tutoring/Teaching",
-          "date": "2018-present",
-          "content": [
-            "Undergraduate Course Assistant for Computer Systems Principles",
-            "Undergraduate Course Assistant for Introduction to Computation",
-            "Volunteered as tutor for <a href='https://www.csvinc.org/'>Cambridge School Volunteers</a>",
-            "Volunteered as Teaching Assistant for AP Computer Science A"
+            "Project for CS124 Data Structures and Algorithms at Harvard, written in C",
+            "Randomly generates graphs in dimensions 1-4 by placing points on a unit line, square, cube and hypercube, then finds the distance of the minimum spanning tree between the nodes using Prim's algorithm",
+            "Tested for up to 2^18 points in each dimension"
           ]
         }
       ]
@@ -196,7 +229,10 @@
             ["HTML"],
             ["CSS"],
             ["Python"],
-            ["Lua"]
+            ["Lua"],
+            ["SQL"],
+            ["Assembly"],
+            ["Matlab"]
           ]
         },
         {
@@ -206,8 +242,11 @@
             ["Express"],
             ["React"],
             ["NumPy"],
-            ["Android SDK"],
-            ["Jetpack Compose"]
+            ["Tkinter"],
+            ["Sqlite"],
+            ["MongoDB"],
+            ["PostgreSQL"],
+            ["Docker"]
           ]
         },
         {
@@ -218,7 +257,11 @@
             ["Regex"],
             ["MatLab"],
             ["Linux"],
-            ["NixOS"]
+            ["NixOS"],
+            ["Google Cloud"],
+            ["AWS"],
+            ["Operating Systems"],
+            ["REST Apis"]
           ]
         }
       ]
