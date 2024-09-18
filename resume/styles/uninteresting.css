@@ -55,8 +55,8 @@
 div#resume {
     --ew-margins: .5in;
     --ns-margins: .2in;
-    max-width: calc(8.5in - var(--ew-margins));
-    max-height: calc(11in - var(--ns-margins));
+    max-width: calc(8.5in - 2 * var(--ew-margins));
+    max-height: calc(11in - 2 * var(--ns-margins));
     padding: var(--ns-margins) var(--ew-margins);
 }
 

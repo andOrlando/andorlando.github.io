@@ -48,6 +48,16 @@ body {
   left: 10px;
   user-select: none;
 }
+#back {
+  position: absolute;
+  right: 0;
+  transform: translateX(100%);
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  user-select: none;
+}
 #tableofcontents {
   min-width: var(--width);
   position: absolute;

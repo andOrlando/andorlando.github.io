@@ -1,10 +1,22 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>dog</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Bennett Gillig / Resume</title>
+  <link rel="stylesheet" type="text/css" href="/common.css">
+  <link id="switchstyle" rel="stylesheet" type="text/css" href="/resume/styles/default.css">
 </head>
 <body>
+<div style="display: flex;">
+  <div id="resume" style="flex: 1 1 0;"></div>
+  <textarea id="editor" style="flex: 1 1 0;" hidden></textarea>
+</div>
+<div style="position: absolute; left: 0; top: 0" id="buttoncontainer">
+  <button id="switchbutton">switch style</button>
+  <button id="export">export</button>
+  <button id="edit">edit</button>
+  <button onclick="document.getElementById('buttoncontainer').remove()">kill buttons</button>
+</div>
 <script src="index.js" type="module"></script>
 </body>
 </html>

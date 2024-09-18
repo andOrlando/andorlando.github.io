@@ -17,13 +17,15 @@ function make_navigate(element, modify_link=a=>a) {
 
 const about = document.getElementById("about")
 const blog = document.getElementById("blog")
-const demos = document.getElementById("demos")
+// const demos = document.getElementById("demos")
 const resume = document.getElementById("resume")
 
-// make_navigate(about)
-make_navigate(blog, a=>"./blog")
+
+
+make_navigate(about)
+make_navigate(blog, ()=>"blog")
 // make_navigate(demos)
-make_navigate(resume)
+make_navigate(resume, ()=>"resume")
 
 
 //do circle drawing stuff

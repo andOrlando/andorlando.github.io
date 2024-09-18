@@ -7,6 +7,7 @@ import {
   make_even_darker_background_color,
   make_light_color_less_variance,
   make_dark_color_less_variance,
+  navigate,
 } from "../lib/theme.js"
 
 const sidebar = document.getElementById("sidebar")
@@ -24,6 +25,9 @@ svg.style.background = make_darker_background_color()
 //setup hamburger
 document.getElementById("hamburger")
   .addEventListener("click", ()=>sidebar.classList.toggle("hidden"))
+
+document.getElementById("back")
+  .addEventListener("click", ()=>navigate("/"))
 
 //do circles
 const circles = blog_sidebar_circles()

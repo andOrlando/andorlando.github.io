@@ -44,7 +44,7 @@
               "content": [
                 ["GPA", "3.94 (Honors College, Dean's List)"],
                 ["Majors", "Computer Science, Computer Engineering"],
-                ["Coursework", "<i>(2024)</i> Introduction to Algorithms, Introduction to Software Engineering, <i>(2023)</i> Introduction to Computation, Computer Systems Principles, Programming Methodology, Differential Equations, <i>(2022)</i> Calculus III, Data Structures"]
+                ["Coursework", "<i>(2024)</i> Hardware Organization and Design, Operating Systems, Introduction to Algorithms, Introduction to Software Engineering, <i>(2023)</i> Introduction to Computation, Computer Systems Principles, Programming Methodology, Differential Equations, <i>(2022)</i> Calculus III, Data Structures"]
               ]
             }
           ]
@@ -73,10 +73,10 @@
           "title": "System Level Debug Engineer Intern for Intel",
           "date": "05/2024-08/2024",
           "content": [
-            "Created an internal tool to keep track of state across test systems, host systems and a wiki for XEG teams and Lab Techs",
+            "Created an internal tool to keep track of state across test systems, host systems and a wiki for SLD and Lab Techs",
             "Created a debug tool that hooks into a seperate debug tool to test plugins. Works for both client and DCAI plugins",
-            "Created a repository of both new and old best practices for a debug tool",
-            "Ramped up on Intel Xeon Architecture and IPs"
+            "Created a tool to standardize, locate and categorize entries into a bug-tracking database for future debugging efforts",
+            "Ramped up on Intel Xeon Architecture and IPs and learned basic fuse debug"
           ]
         },
         {
@@ -84,9 +84,9 @@
           "title": "Lab Leader for <a href='https://www.digitalready.org/'>Digital Ready</a>",
           "date": "06/2023-09/2023",
           "content": [
-            "Supervised and mentored high-school for through a Roxbury Community College course",
+            "Supervised and mentored high-school students for through a Roxbury Community College course",
             "Oversaw deliverables such as a Python card game project, portfolio website and Google certificates in IT and UI/UX",
-            "Authored and presented lectures, labs and activities"
+            "Authored and delivered lectures, labs and activities"
           ]
         },
         {
@@ -102,7 +102,7 @@
         {
           "type": "bullets",
           "title": "Tutoring/Teaching",
-          "date": "2018-present",
+          "date": "2021-present",
           "content": [
             "2x Undergraduate Course Assistant for Computer Systems Principles",
             "Undergraduate Course Assistant for Introduction to Computation",
@@ -222,6 +222,7 @@
             ["JavaScript"],
             ["TypeScript"],
             ["C"],
+            ["C++"],
             ["Rust"],
             ["R"],
             ["Java"],
@@ -246,6 +247,7 @@
             ["Sqlite"],
             ["MongoDB"],
             ["PostgreSQL"],
+            ["SQLite"],
             ["Docker"]
           ]
         },
