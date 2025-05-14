@@ -2,7 +2,7 @@ HackUMASS 2023
 category: school; date: 1/4/2024;
 
 - [X] devpost is [here](https://devpost.com/software/risc-v-js)
-- [X] github is [here](https://github.com/PianoPanda/HackUMASSXI)
+- [X] github is [here](https://github.com/BananaMiku/HackUMASSXI)
 
 So me and four of my friends won Best Software and Best Security at our school's hackathon. We didn't finish what we sought to set out, but we ended up with honestly a pretty seriously cool project that's like one more hackathon day away from being fully featured.
 

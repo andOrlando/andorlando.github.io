@@ -70,7 +70,7 @@
       "content": [
         {
           "type": "bullets",
-          "title": "System Level Debug Engineer Intern for Intel",
+          "title": "SoC Engineer Intern for Intel",
           "date": "05/2024-08/2024",
           "content": [
             "Created an internal tool to keep track of state across test systems, host systems and a wiki for SLD and Lab Techs",
@@ -112,7 +112,7 @@
         },
         {
           "type": "bullets",
-          "title": "Project Lead for <a href='https://buildumass.com/'>BUILD UMass</a> pro bono",
+          "title": "Project Lead and Secretary for <a href='https://buildumass.com/'>BUILD UMass</a> pro bono",
           "date": "09/2022-present",
           "content": [
             "Prototyped and implemented blog website for IUCG using the MERN stack and AWS S3 cloud object storage",
@@ -141,8 +141,9 @@
           "title": "Hackathon Wins",
           "date": "2023-2024",
           "content": [
-            "<a href='https://devpost.com/software/risc-v-js'>RISC-V.js</a> won Best Software and Best Security out of 64 projects in HackUMassXI. Emulated a RISC-V processor (rv32ima) in the browser and could run (almost) any arbitrary binary compiled for its instruction set",
-            "<a href='https://devpost.com/software/bad-apple-but-google-calendar'>Bad Apple in Google Calendar</a> won Cutest Hack out of 36 projects in HackHer413. Used ffmpeg to turn a video into frames, in house javascript code to turn frames into scaled pixel matrices and then into more optimized calendar events, then the Google Calendar API in order to upload them to a calendar"
+            "Winner at HackUMass XI out of 88 projects, <a href='https://devpost.com/software/risc-v-js'>RISC-V.js</a> emulated a RISC-V processor (rv32ima) in the browser and could run (almost) any arbitrary binary compiled for its instruction set",
+            "Winner at HackHer413 out of 36 projects, <a href='https://devpost.com/software/bad-apple-but-google-calendar'>Bad Apple in Google Calendar</a> used ffmpeg to turn a video into frames, in house javascript code to turn frames into scaled pixel matrices and then into more optimized calendar events, then the Google Calendar API in order to upload them to a calendar",
+            "Winner at HackUMass XII out of 44 projects, <a href='https://devpost.com/software/unicall'>Onedef</a> is a cross-language communication specification which we implmented for JavaScript, Python and C++ allowing you to write a function in one language and call it in another."
           ]
         },
         {

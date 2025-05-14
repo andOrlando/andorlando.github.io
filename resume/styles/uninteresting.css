@@ -61,7 +61,7 @@ div#resume {
 }
 
 .depth-1 > .title {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     display: block;
     border-top: 2px black solid;
@@ -75,7 +75,7 @@ div#resume {
 
 .info > .title {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 28px;
 }
 
 span.key::after {content: ": ";}

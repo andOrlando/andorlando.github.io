@@ -3,7 +3,7 @@ category: school; date: 4/30/2024;
 
 - [X] [watch the video!](https://www.youtube.com/watch?v=P6NUBAzFOSc)
 - [X] devpost is [here](https://devpost.com/software/bad-apple-but-google-calendar)
-- [X] github is [here](https://github.com/PianoPanda/2024_HackHer413)
+- [X] github is [here](https://github.com/BananaMiku/2024_HackHer413)
 
 This is actually a story I've told to my friends, family, extended family, neighbors, coworkers, extraterrestrial aliens, dogs, etc. since it's just such a great story. Up there with Homer's Odyssey, War and Peace, Shark Tales, etc. And so I'll add "whoever sees this blog post" to the list of poeple I've told this story to.
 
