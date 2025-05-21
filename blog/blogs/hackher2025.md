@@ -21,7 +21,7 @@ To use someone else's chain we basically "rebase" on theirs, then we can continu
 
 All that is wrapped up in a cute little CLI that includes some very nice animations that Austin made, which we then converted to ASCII to play in the terminal while it's mining/transferring/etc.
 
-TODO: add animation gifs
+![mining](mining.gif)
 
 tbh I'm only semi-convinced that our explanation on the devpost isn't chatgpt'd, why is the word "delve" in there. I mean the information is accurate, we did watch a bunch of 3 blue 1 brown but I feel like I'd avoid that word if I was writing a blog lol. I guess it's in the sprit of a tech-bro so I guess it's fine for this project lol
 
