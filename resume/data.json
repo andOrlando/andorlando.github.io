@@ -2,7 +2,7 @@
   "type": "root",
   "title": "Bennett Gillig",
   "subtitle": "writes cool code sometimes",
-  "description": "College junior who's interested in writing high-performance code, open source software and rhythm games. Read more on my personal website: <a href='https://andorlando.github.io'>andorlando.github.io</a>.",
+  "description": "College senior who's interested in writing high-performance code, open source software and rhythm games. Read more on my personal website: <a href='https://andorlando.github.io'>andorlando.github.io</a>.",
   "links": [
     {
       "name": "andOrlando",
@@ -10,6 +10,7 @@
       "icon": "<svg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 496 512'><path d='M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z'/></svg>"
     },
     {
+      "exclude": true,
       "name": "bennettgillig",
       "link": "https://www.kaggle.com/bennettgillig",
       "icon": "<svg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 320 512'><path d='M304.2 501.5L158.4 320.3 298.2 185c2.6-2.7 1.7-10.5-5.3-10.5h-69.2c-3.5 0-7 1.8-10.5 5.3L80.9 313.5V7.5q0-7.5-7.5-7.5H21.5Q14 0 14 7.5v497q0 7.5 7.5 7.5h51.9q7.5 0 7.5-7.5v-109l30.8-29.3 110.5 140.6c3 3.5 6.5 5.3 10.5 5.3h66.9q5.25 0 6-3z'/></svg>"
@@ -42,9 +43,10 @@
             {
               "type": "kv",
               "content": [
-                ["GPA", "3.94 (Honors College, Dean's List)"],
-                ["Majors", "Computer Science, Computer Engineering"],
-                ["Coursework", "<i>(2024)</i> Hardware Organization and Design, Operating Systems, Introduction to Algorithms, Introduction to Software Engineering, <i>(2023)</i> Introduction to Computation, Computer Systems Principles, Programming Methodology, Differential Equations, <i>(2022)</i> Calculus III, Data Structures"]
+                ["GPA", "3.96 (Honors College, Dean's List)"],
+                ["Majors", "BS in Computer Science, Computer Engineering, Math"],
+                ["Undergraduate Coursework", "Abstract Algebra, Introduction to VLSI, Hardware Organization and Design, Operating Systems, Introduction to Algorithms, Programming Methodology, Calculus III, Data Structures"],
+                ["Graduate Coursework", "Formal Language Theory, Machine Learning, Algorithms for Data Science, Compiler Techniques"]
               ]
             }
           ]
@@ -70,19 +72,29 @@
       "content": [
         {
           "type": "bullets",
-          "title": "SoC Engineer Intern for Intel",
+          "title": "Software Engineer Intern for Mathworks",
+          "date": "05/2025-08/2025",
+          "content": [
+            "Created an MCP server for requirement management tooling to allow for Agentic workflows, enabling PDF import, requirement-to-code linking and verification, and code from requirement generation among other workflows",
+            "Integrated in-house LLM API with external tooling (semantic-kernel) allowing for easy MCP/Agent integration",
+            "Used mentioned integration to create the first MCP client at Mathworks that supports said in-house API"
+          ]
+        },
+        {
+          "type": "bullets",
+          "title": "SoC Debug Engineer Intern for Intel",
           "date": "05/2024-08/2024",
           "content": [
-            "Created an internal tool to keep track of state across test systems, host systems and a wiki for SLD and Lab Techs",
-            "Created a debug tool that hooks into a seperate debug tool to test plugins. Works for both client and DCAI plugins",
-            "Created a tool to standardize, locate and categorize entries into a bug-tracking database for future debugging efforts",
-            "Ramped up on Intel Xeon Architecture and IPs and learned basic fuse debug"
+            "Created an internal monitoring tool to automatically scan and report system state for debuggers and lab techs",
+            "Created a line profiler for an internal Python testing framework that worked on both consumer and datacenter CPUs",
+            "Created a tool to standardize, locate and categorize entries into a bug-tracking database for future debugging efforts"
           ]
         },
         {
           "type": "bullets",
           "title": "Lab Leader for <a href='https://www.digitalready.org/'>Digital Ready</a>",
           "date": "06/2023-09/2023",
+          "exclude": true,
           "content": [
             "Supervised and mentored high-school students for through a Roxbury Community College course",
             "Oversaw deliverables such as a Python card game project, portfolio website and Google certificates in IT and UI/UX",
@@ -101,8 +113,17 @@
         },
         {
           "type": "bullets",
-          "title": "Tutoring/Teaching",
+          "title": "Undergraduate Course Assistant",
+          "date": "2023-present",
+          "content": [
+            "Taught for Programming Methodology, Computer Systems Principles, Introduction to Computation"
+          ]
+        },
+        {
+          "type": "bullets",
+          "title": "Tutoring/Teaching (OLD)",
           "date": "2021-present",
+          "exclude": true,
           "content": [
             "2x Undergraduate Course Assistant for Computer Systems Principles",
             "Undergraduate Course Assistant for Introduction to Computation",
@@ -111,6 +132,7 @@
           ]
         },
         {
+          "exclude": true,
           "type": "bullets",
           "title": "Project Lead and Secretary for <a href='https://buildumass.com/'>BUILD UMass</a> pro bono",
           "date": "09/2022-present",
@@ -125,6 +147,14 @@
     {
       "title": "Projects",
       "content": [
+        {
+          "type": "bullets",
+          "title": "Research",
+          "content": [
+            "<b>With Syslab</b>: Contributed to MAGI, a Gradescope autograder generator. Extended",
+            "<b>With <a href='https://plasma-umass.org/'>PLASMA</a></b>: Contributed to <a href='https://github.com/RightTyper/RightTyper'>RightTyper</a>, a runtime Python type-annotation engine created for Amazon Web Services. Worked on type parametrization logic, concrete syntax tree modification, and testing against existing type engines"
+          ]
+        },
         {
           "type": "bullets",
           "exclude": true,
@@ -142,8 +172,19 @@
           "date": "2023-2024",
           "content": [
             "Winner at HackUMass XI out of 88 projects, <a href='https://devpost.com/software/risc-v-js'>RISC-V.js</a> emulated a RISC-V processor (rv32ima) in the browser and could run (almost) any arbitrary binary compiled for its instruction set",
-            "Winner at HackHer413 out of 36 projects, <a href='https://devpost.com/software/bad-apple-but-google-calendar'>Bad Apple in Google Calendar</a> used ffmpeg to turn a video into frames, in house javascript code to turn frames into scaled pixel matrices and then into more optimized calendar events, then the Google Calendar API in order to upload them to a calendar",
-            "Winner at HackUMass XII out of 44 projects, <a href='https://devpost.com/software/unicall'>Onedef</a> is a cross-language communication specification which we implmented for JavaScript, Python and C++ allowing you to write a function in one language and call it in another."
+            "Winner at HackHer413 out of 36 projects, <a href='https://devpost.com/software/bad-apple-but-google-calendar'>Bad Apple in Google Calendar</a> used ffmpeg to turn a video into frames, in house JavaScript code to turn frames into scaled pixel matrices and then into more optimized calendar events, then the Google Calendar API in order to upload them to a calendar",
+            "Winner at HackUMass XII out of 44 projects, <a href='https://devpost.com/software/unicall'>Onedef</a> is a cross-language communication specification which we implmented for JavaScript, Python and C++ allowing you to write a function in one language and call it in another"
+          ]
+        },
+        {
+          "exclude": true,
+          "type": "bullets",
+          "title": "<a href='https://github.com/bennett-felix-software/bfbbfb'>bfbbfb</a>: Bennett and Felix Bootstrap Brainfrick from Brainfrick",
+          "date": "2024-2025",
+          "content": [
+            "Created domain specific language that compiles Python to Brainfrick, which is used to fully boostrap Brainfrick",
+            "Created Brainfrick self-compiler in DSL which compiles Brainfrick to x86, Arm, obfuscated C or Brainfrick itself",
+            "Created a turing-machine simulator in DSL, proving Brainfrick turing-complete by simulation"
           ]
         },
         {
@@ -152,7 +193,7 @@
           "date": "2020-2022",
           "content": [
             "Inbetweening library for <a href='https://github.com/awesomeWM/awesome'>awesomeWM</a> written in Lua",
-            "Animates positions by calculating a numeric integral of a velocity graph for the animation, resulting in a continuous velocity graph. This allows me to chain animations together mathematically perfectly, resulting in clean interruptions",
+            "Uses inverse kinematics to interpolate positions, allowing for animation interruptions with continuous velocity",
             "~1900 peak biweekly downloads and ~240 stars on GitHub, is the premier animation library for awesomeWM"
           ]
         },
@@ -171,6 +212,7 @@
           "type": "bullets",
           "title": "<a href='https://github.com/andOrlando/save-manager'>save-manager</a>",
           "date": "2023",
+          "exclude": false,
           "content": [
             "Cross-platform version control for files at arbitrary locations written in Rust",
             "Fully fleshed out command line interface including subcommands and flags using <a href='https://github.com/clap-rs/clap'>clap</a>",
@@ -183,7 +225,7 @@
           "exclude": true,
           "date": "2022",
           "content": [
-            "Machine learning model written in python that determine whether arbitrary code is aesthetically pleasing",
+            "Machine learning model written in Python that determine whether arbitrary code is aesthetically pleasing",
             "Uses 14 features including fitting the tabs to up to a 10th order polynomial series",
             "Predicts absolutely nothing useful but is cool anyways"
           ]
@@ -196,7 +238,7 @@
           "content": [
             "Simple bookmark that automates multiple homework assignment websites",
             "Zybooks automatically finishes completion sections of zybooks and finishes a course's worth of homework in ~2 hrs",
-            "WebAssign opens javascript repl where displayed matrices are local variables on which you can perform matrix arithmatic",
+            "WebAssign opens JavaScript repl where displayed matrices are local variables on which you can perform matrix arithmatic",
             "KendallHuntContent script automates storage and retrieval of practice test questions using localStorage with a fully-featured UI and data transfer"
           ]
         },
@@ -218,7 +260,7 @@
       "content": [
         {
           "type": "tags",
-          "title": "languages",
+          "title": "Languages",
           "content": [
             ["JavaScript"],
             ["TypeScript"],
@@ -231,12 +273,13 @@
             ["Python"],
             ["SQL"],
             ["Assembly"],
-            ["Matlab"]
+            ["Matlab"],
+            ["Golang"]
           ]
         },
         {
           "type": "tags",
-          "title": "frameworks/libraries",
+          "title": "Frameworks/Libraries",
           "content": [
             ["Express"],
             ["React"],
@@ -251,17 +294,17 @@
         },
         {
           "type": "tags",
-          "title": "other skills",
+          "title": "Other Skills",
           "content": [
             ["Git"],
             ["Regex"],
-            ["MatLab"],
             ["Linux"],
             ["NixOS"],
             ["Google Cloud"],
             ["AWS"],
             ["Operating Systems"],
-            ["REST Apis"]
+            ["REST APIs"],
+            ["MCP"]
           ]
         }
       ]
