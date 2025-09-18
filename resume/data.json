@@ -29,7 +29,6 @@
       "name": "andorlando.github.io",
       "link": "https://andorlando.github.io",
       "icon": ""
-
     }
   ],
   "content": [
@@ -151,7 +150,7 @@
           "type": "bullets",
           "title": "Research",
           "content": [
-            "<b>With Syslab</b>: Contributed to <a href='https://github.com/cics-syslab/MAGI'>MAGI</a>, a Gradescope autograder generator. Extended to TypeScript assignments.",
+            "<b>With Syslab</b>: Contributed to <a href='https://github.com/cics-syslab/MAGI'>MAGI</a>, a Gradescope autograder generator. Extended to TypeScript assignments",
             "<b>With <a href='https://plasma-umass.org/'>PLASMA</a></b>: Contributed to <a href='https://github.com/RightTyper/RightTyper'>RightTyper</a>, a runtime Python type-annotation engine created for Amazon Web Services. Worked on type parametrization logic, concrete syntax tree modification, and testing against existing type engines"
           ]
         },
